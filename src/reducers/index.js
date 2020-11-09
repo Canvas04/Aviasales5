@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-import check from './check'
+import loadTickets from './loadTickets'
 
-export default combineReducers({ check});
-
+export default combineReducers({loadTickets});
