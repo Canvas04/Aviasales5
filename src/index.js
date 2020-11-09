@@ -5,6 +5,7 @@ import { createStore } from 'redux'
 import App from './components/App'
 import rootReducer from './reducers/index'
 
+
 const store = createStore(rootReducer)
 render(
   <Provider store={store}>
@@ -12,4 +13,3 @@ render(
   </Provider>,
   document.getElementById('root')
 )
-
