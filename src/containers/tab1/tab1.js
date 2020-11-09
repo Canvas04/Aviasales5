@@ -9,6 +9,6 @@ useEffect(() => {
     dispatch(filters('fastest',tickets))
 })
 return <>
-
+<h1>Tab1</h1>
 </>
 }

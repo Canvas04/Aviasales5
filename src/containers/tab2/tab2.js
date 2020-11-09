@@ -6,8 +6,9 @@ export default function Tab2 () {
     const dispatch = useDispatch();
     const tickets = useSelector(store => store.loadTickets.tickets)
     useEffect(() => {
-        dispatch(filters('cheapest',tickets))
+        dispatch(filters('cheap',tickets))
     })
 return <>
+<h1>Tab2</h1>
 </>
 }
