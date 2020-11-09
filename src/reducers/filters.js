@@ -1,4 +1,4 @@
-import { FILTER } from '../constants'
+import { CHEAPEST, FASTEST, FILTER } from '../constants'
 import { filterOnPrice, filterOnSpeed } from '../secondaryFunc'
 
 const filters = (state = null, action) => {
@@ -14,9 +14,9 @@ export default filters
 
 const getTickets = (filter) => {
 	switch (filter.nameFilter) {
-		case 'fastest':
+		case FASTEST:
 			return filterOnSpeed(filter.payload)
-		case 'cheap':
+		case CHEAPEST:
 			return filterOnPrice(filter.payload)
 		default:
 			return filter.payload
