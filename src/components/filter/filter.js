@@ -1,6 +1,7 @@
 import React from 'react'
 import TabPanel from '../tab-panel/tab-panel'
 import { Checkbox } from 'antd'
+import {Button} from 'antd'
 import {
 	ALL,
 	NO_STOPS,
@@ -26,8 +27,10 @@ export default function Filter() {
 	)
 	return (
 		<>
+
 			{checkboxes}
 			<TabPanel />
+            <Button type='primary' className='btn btn-primary'>Показать еще</Button>
 		</>
 	)
 }
