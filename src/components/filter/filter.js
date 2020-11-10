@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import TabPanel from '../tab-panel/tab-panel'
 import { Checkbox } from 'antd'
 import {
