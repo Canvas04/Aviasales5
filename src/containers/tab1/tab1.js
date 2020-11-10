@@ -5,7 +5,8 @@ import { FASTEST } from '../../constants';
 
 export default function Tab1 () {
 const dispatch = useDispatch();
-const tickets = useSelector(store => store.loadTickets.tickets)
+const tickets = useSelector(store => store.loadTickets.tickets);
+
 useEffect(() => {
     dispatch(filters(FASTEST,tickets))
 })

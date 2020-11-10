@@ -1,3 +1,5 @@
+import { ALL, NO_STOPS, ONE_STOP, THREE_STOPS, TWO_STOPS } from '../constants'
+
 export const filterOnPrice = (arr) => {
 	const copyArr = arr.slice()
 	return copyArr.sort((a, b) => {
@@ -21,7 +23,7 @@ export const filterOnLength = (arr) => {
 	return arr
 }
 
-const filterOnStops = (arr, num) => {
+export const filterOnStops = (arr, num) => {
 	const arrWithStops = arr.map((el) => {
 		const { segments } = el
 		return {
@@ -50,19 +52,16 @@ const filterOnStops = (arr, num) => {
 
 export const filterOnLabel = (arr, label) => {
 	switch (label) {
-		case 'Все':
+		case ALL:
 			return filterOnStops(arr)
-
-		case 'Без пересадок':
+		case NO_STOPS:
 			return filterOnStops(arr, 0)
-
-		case '1 пересадка':
+		case ONE_STOP:
 			return filterOnStops(arr, 1)
-
-		case '2 пересадки':
+		case TWO_STOPS:
 			return filterOnStops(arr, 2)
 
-		case '3 пересадки':
+		case THREE_STOPS:
 			return filterOnStops(arr, 3)
 
 		default:

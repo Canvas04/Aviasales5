@@ -8,7 +8,7 @@ import rootReducer from './reducers/index'
 
 const loggerMiddleWare = (store) => (next) => (action) => {
   const result = next(action)
-  console.log(store.getState())
+//   console.log(store.getState())
   return result
 }
 
@@ -27,3 +27,4 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+// Остановился на написании редьюсеров для чекбоксов
