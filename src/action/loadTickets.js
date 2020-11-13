@@ -26,7 +26,7 @@ const errorLoadTickets = (error) => {
 	}
 }
 
-export function loadTickets() {
+export function loadTickets(prevTickets) {
 	return async (dispatch) => {
 		const callId = await fetch(SEARCH_URL)
 		const searchId = await callId.json()
@@ -36,8 +36,9 @@ export function loadTickets() {
 			const callTickets = await fetch(`${TICKETS_URL}=${searchId.searchId}`)
 
 			const { tickets, stop } = await callTickets.json()
-			
-				dispatch(receiveTickets(tickets))
+const allTickets = tickets.concat(prevTickets);
+
+				dispatch(receiveTickets(allTickets))
 				if (tickets.length === 0) {
 					throw new Error('Try to reload the page')
 				}
