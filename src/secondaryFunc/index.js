@@ -35,6 +35,7 @@ export const filterOnStops = (arr, num) => {
 	})
 
 	if (num >= 0) {
+		// eslint-disable-next-line array-callback-return
 		const needTickets = arrWithStops.filter((el) => {
 			if (el.stops === num) {
 				return el
@@ -68,3 +69,12 @@ export const filterOnLabel = (arr, label) => {
 			return arr
 	}
 }
+// export const getContent = () => {
+//     apiMethod({start: 0,count: 20})
+// }
+// export const loadContent = () => {
+// const limit = loadTickets()
+//     if(!limit) {
+//         dispatch(loadContent())
+//     }
+// }

@@ -1,7 +1,8 @@
 import React from 'react'
-import TabPanel from '../tab-panel/tab-panel'
-import { Checkbox } from 'antd'
 import {Button} from 'antd'
+import { Checkbox } from 'antd'
+import TabPanel from '../tab-panel/tab-panel'
+import { useDispatch, useSelector } from 'react-redux'
 import {
 	ALL,
 	NO_STOPS,
@@ -10,16 +11,16 @@ import {
 	TWO_STOPS,
 } from '../../constants'
 import filters from '../../action/filters'
-import { useDispatch, useSelector } from 'react-redux'
+import {loadTickets} from '../../action/loadTickets'
 
 export default function Filter() {
 	const dispatch = useDispatch()
-	const loadTickets = useSelector((store) => store.loadTickets.tickets)
+	const loadedTickets = useSelector((store) => store.loadTickets.tickets)
 
 	const checkboxes = [ALL, NO_STOPS, ONE_STOP, TWO_STOPS, THREE_STOPS].map(
 		(el, i) => {
 			return (
-				<Checkbox key={i} onChange={() => dispatch(filters(el, loadTickets))}>
+				<Checkbox key={i} onChange={() => dispatch(filters(el, loadedTickets))}>
 					{el}
 				</Checkbox>
 			)
@@ -30,7 +31,7 @@ export default function Filter() {
 
 			{checkboxes}
 			<TabPanel />
-            <Button type='primary' className='btn btn-primary'>Показать еще</Button>
+            <Button type='primary' className='btn btn-primary' onClick={() => dispatch(loadTickets())}>Показать еще</Button>
 		</>
 	)
 }
