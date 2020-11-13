@@ -12,6 +12,7 @@ import {
 } from '../../constants'
 import filters from '../../action/filters'
 import {loadTickets} from '../../action/loadTickets'
+import Loader from '../loader/loader'
 
 export default function Filter() {
 	const dispatch = useDispatch()
@@ -32,6 +33,7 @@ export default function Filter() {
 			{checkboxes}
 			<TabPanel />
             <Button type='primary' className='btn btn-primary' onClick={() => dispatch(loadTickets(loadedTickets))}>Показать еще</Button>
+            <Loader />
 		</>
 	)
 }

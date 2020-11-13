@@ -36,13 +36,12 @@ export function loadTickets(prevTickets) {
 			const callTickets = await fetch(`${TICKETS_URL}=${searchId.searchId}`)
 
 			const { tickets, stop } = await callTickets.json()
-const allTickets = tickets.concat(prevTickets);
+			const allTickets = tickets.concat(prevTickets)
 
-				dispatch(receiveTickets(allTickets))
-				if (tickets.length === 0) {
-					throw new Error('Try to reload the page')
-				}
-
+			dispatch(receiveTickets(allTickets))
+			if (tickets.length === 0) {
+				throw new Error('Try to reload the page')
+			}
 		} catch (error) {
 			dispatch(errorLoadTickets(error))
 		}

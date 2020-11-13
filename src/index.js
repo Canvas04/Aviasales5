@@ -27,4 +27,4 @@ render(
   </Provider>,
   document.getElementById('root')
 )
-// Остановился на написании редьюсеров для чекбоксов
+
