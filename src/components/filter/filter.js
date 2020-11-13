@@ -32,7 +32,7 @@ export default function Filter() {
 
 			{checkboxes}
 			<TabPanel />
-            <Button type='primary' className='btn btn-primary' onClick={() => dispatch(loadTickets(loadedTickets))}>Показать еще</Button>
+            <Button type='primary' className='btn btn-primary' onClick={() => dispatch(loadTickets())}>Показать еще</Button>
             <Loader />
 		</>
 	)

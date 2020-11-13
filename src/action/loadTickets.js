@@ -26,8 +26,10 @@ const errorLoadTickets = (error) => {
 	}
 }
 
-export function loadTickets(prevTickets) {
-	return async (dispatch) => {
+export function loadTickets() {
+	return async (dispatch,store) => {
+         const prevTickets = store().loadTickets.tickets
+
 		const callId = await fetch(SEARCH_URL)
 		const searchId = await callId.json()
 		dispatch(requestTickets())
