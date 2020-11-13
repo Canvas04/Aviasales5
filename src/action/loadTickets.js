@@ -37,7 +37,7 @@ export function loadTickets() {
 		try {
 			const callTickets = await fetch(`${TICKETS_URL}=${searchId.searchId}`)
 
-			const { tickets, stop } = await callTickets.json()
+			const { tickets} = await callTickets.json()
 			const allTickets = tickets.concat(prevTickets)
 
 			dispatch(receiveTickets(allTickets))
