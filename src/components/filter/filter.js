@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from 'antd'
+import { Button } from 'antd'
 import { Checkbox } from 'antd'
 import TabPanel from '../tab-panel/tab-panel'
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,8 +11,9 @@ import {
 	TWO_STOPS,
 } from '../../constants'
 import filters from '../../action/filters'
-import {loadTickets} from '../../action/loadTickets'
+import { loadTickets } from '../../action/loadTickets'
 import Loader from '../loader/loader'
+import { getPrevTickets } from '../../secondaryFunc'
 
 export default function Filter() {
 	const dispatch = useDispatch()
@@ -29,11 +30,18 @@ export default function Filter() {
 	)
 	return (
 		<>
-
 			{checkboxes}
 			<TabPanel />
-            <Button type='primary' className='btn btn-primary' onClick={() => dispatch(loadTickets())}>Показать еще</Button>
-            <Loader />
+			<Button
+				type="primary"
+				className="btn btn-primary"
+				onClick={() => {
+					dispatch(loadTickets())
+				}}
+			>
+				Показать еще
+			</Button>
+			<Loader />
 		</>
 	)
 }

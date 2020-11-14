@@ -16,11 +16,15 @@ export const filterOnSpeed = (arr) => {
 	})
 }
 
-export const filterOnLength = (arr) => {
-	if (arr.length > 20) {
-		return arr.slice(0, 20)
-	}
-	return arr
+export const filterOnLength = (arr,prevTickets) => {
+if(prevTickets) {
+    console.log(prevTickets)
+    return [...arr.slice(0,20),...prevTickets.slice(0,20)]
+}else {
+    return [...arr.slice(0,20)]
+}
+
+
 }
 
 export const filterOnStops = (arr, num) => {
@@ -69,12 +73,6 @@ export const filterOnLabel = (arr, label) => {
 			return arr
 	}
 }
-// export const getContent = () => {
-//     apiMethod({start: 0,count: 20})
-// }
-// export const loadContent = () => {
-// const limit = loadTickets()
-//     if(!limit) {
-//         dispatch(loadContent())
-//     }
-// }
+export const getPrevTickets = (prevTickets) => {
+    return prevTickets;
+}

@@ -5,6 +5,7 @@ import { createStore,applyMiddleware,compose } from 'redux'
 import reduxThunk from 'redux-thunk'
 import App from './containers/App'
 import rootReducer from './reducers/index'
+import { getPrevTickets } from './secondaryFunc'
 
 const loggerMiddleWare = (store) => (next) => (action) => {
   const result = next(action)
@@ -27,4 +28,5 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+
 
