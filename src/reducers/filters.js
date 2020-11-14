@@ -1,11 +1,11 @@
 import { ALL, CHEAPEST, FASTEST, FILTER, NO_STOPS, THREE_STOPS, TWO_STOPS ,ONE_STOP} from '../constants'
-import { filterOnLabel, filterOnLength, filterOnPrice, filterOnSpeed, getPrevTickets } from '../secondaryFunc'
+import { filterOnLabel,  filterOnPrice, filterOnSpeed } from '../secondaryFunc'
 
 
 const filters = (state = null, action) => {
 	switch (action.type) {
 		case FILTER:
-			return filterOnLength(getTickets(action),getPrevTickets())
+			return getTickets(action)
 
 		default:
 			return state

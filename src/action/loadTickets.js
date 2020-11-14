@@ -5,7 +5,6 @@ import {
 	TICKETS_URL,
 	SEARCH_URL,
 } from '../constants'
-import { getPrevTickets } from '../secondaryFunc'
 
 const requestTickets = () => {
 	return {
@@ -30,7 +29,6 @@ const errorLoadTickets = (error) => {
 export function loadTickets() {
 	return async (dispatch,store) => {
          const prevTickets = store().loadTickets.tickets
-getPrevTickets(prevTickets)
 		const callId = await fetch(SEARCH_URL)
 		const searchId = await callId.json()
 		dispatch(requestTickets())

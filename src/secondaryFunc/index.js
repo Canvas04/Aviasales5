@@ -18,7 +18,6 @@ export const filterOnSpeed = (arr) => {
 
 export const filterOnLength = (arr,prevTickets) => {
 if(prevTickets) {
-    console.log(prevTickets)
     return [...arr.slice(0,20),...prevTickets.slice(0,20)]
 }else {
     return [...arr.slice(0,20)]
