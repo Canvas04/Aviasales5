@@ -1,4 +1,11 @@
-import { ALL, DEPARTURE, NO_STOPS, ONE_STOP, THREE_STOPS, TWO_STOPS } from '../constants'
+import {
+	ALL,
+	DEPARTURE,
+	NO_STOPS,
+	ONE_STOP,
+	THREE_STOPS,
+	TWO_STOPS,
+} from '../constants'
 
 export const filterOnPrice = (arr) => {
 	const copyArr = arr.slice()
@@ -18,16 +25,16 @@ export const filterOnSpeed = (arr) => {
 }
 
 export const filterOnLength = (arr, counter) => {
-    let limit = 20
+	let limit = 20
 
 	if (arr.length > 20) {
 		for (let i = 1; i < counter; i++) {
-			limit+=limit
-        }
-        return arr.slice(0,limit)
-	}else {
-        return arr;
-    }
+			limit += limit
+		}
+		return arr.slice(0, limit)
+	} else {
+		return arr
+	}
 }
 
 export const filterOnStops = (arr, num) => {
@@ -76,16 +83,31 @@ export const filterOnLabel = (arr, label) => {
 			return arr
 	}
 }
-export const getDestination = (obj = null,condition) => {
-    const {segments} = obj;
-switch(condition) {
-    case DEPARTURE:
-        const departure = segments[0];
-const {origin} = departure;
-const {destination} = departure;
+export const getDestination = (obj = null, condition) => {
+	const { segments } = obj
+	switch (condition) {
+		case DEPARTURE:
+			const departure = segments[0]
+			const { origin } = departure
+			const { destination } = departure
 
-    return
-        default:
-            return obj;
+			return
+		default:
+			return obj
+	}
 }
-}
+
+const getCheck = (id,arr) => {
+    return arr.filter(el => el.id === id).map(el => el.checked)[0];
+  }
+  const getCheckLabel = (id,arr) => {
+    return arr
+    .filter((el) => el.id === id)
+    .map((el) => el.label)
+    .join(" ")
+  }
+  const getCheckId = (id,arr) => {
+    return arr.filter((el) => el.id === id).map((el) => el.id)[0]
+  }
+
+  export {getCheck,getCheckLabel,getCheckId};
