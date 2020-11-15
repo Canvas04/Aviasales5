@@ -13,12 +13,11 @@ import {
 import filters from '../../action/filters'
 import { loadTickets } from '../../action/loadTickets'
 import Loader from '../loader/loader'
-import { getPrevTickets } from '../../secondaryFunc'
+import { counter } from '../../action/counter'
 
 export default function Filter() {
 	const dispatch = useDispatch()
 	const loadedTickets = useSelector((store) => store.loadTickets.tickets)
-
 	const checkboxes = [ALL, NO_STOPS, ONE_STOP, TWO_STOPS, THREE_STOPS].map(
 		(el, i) => {
 			return (
@@ -37,6 +36,7 @@ export default function Filter() {
 				className="btn btn-primary"
 				onClick={() => {
 					dispatch(loadTickets())
+					dispatch(counter())
 				}}
 			>
 				Показать еще

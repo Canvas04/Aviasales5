@@ -9,18 +9,10 @@ import { FILTER } from '../constants'
 // })
 // export default filters
 
-const reqFilters = (nameFilter, payload, id, label,prevLoadTickets) => ({
-    	type: FILTER,
-    	nameFilter,
-    	payload,
-    	id,
-        label,
-        prevLoadTickets
-    })
-const filters = (nameFilter,payload,id,label) => {
-
-    return (dispatch,store) => {
-        dispatch(reqFilters(nameFilter,payload,id,label,store().loadTickets.tickets))
-    }
+const reqFilters = (nameFilter,payload,counter) => ({type: FILTER,nameFilter,payload,counter})
+const filters = (nameFilter,payload) => {
+return (dispatch,store) => {
+dispatch(reqFilters(nameFilter,payload,store().counter))
+   }
 }
 export default filters

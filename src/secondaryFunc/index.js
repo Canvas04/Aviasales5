@@ -8,6 +8,7 @@ export const filterOnPrice = (arr) => {
 }
 export const filterOnSpeed = (arr) => {
 	const copyArr = arr.slice()
+
 	return copyArr.sort((a, b) => {
 		return (
 			a.segments.reduce((acc, current) => acc.duration + current.duration) -
@@ -16,14 +17,17 @@ export const filterOnSpeed = (arr) => {
 	})
 }
 
-export const filterOnLength = (arr,prevTickets) => {
-if(prevTickets) {
-    return [...arr.slice(0,20),...prevTickets.slice(0,20)]
-}else {
-    return [...arr.slice(0,20)]
-}
+export const filterOnLength = (arr, counter) => {
+    let limit = 20
 
-
+	if (arr.length > 20) {
+		for (let i = 1; i < counter; i++) {
+			limit+=limit
+        }
+        return arr.slice(0,limit)
+	}else {
+        return arr;
+    }
 }
 
 export const filterOnStops = (arr, num) => {
@@ -73,5 +77,5 @@ export const filterOnLabel = (arr, label) => {
 	}
 }
 export const getPrevTickets = (prevTickets) => {
-    return prevTickets;
+	return prevTickets
 }
