@@ -1,4 +1,4 @@
-import { ALL, NO_STOPS, ONE_STOP, THREE_STOPS, TWO_STOPS } from '../constants'
+import { ALL, DEPARTURE, NO_STOPS, ONE_STOP, THREE_STOPS, TWO_STOPS } from '../constants'
 
 export const filterOnPrice = (arr) => {
 	const copyArr = arr.slice()
@@ -76,6 +76,16 @@ export const filterOnLabel = (arr, label) => {
 			return arr
 	}
 }
-export const getPrevTickets = (prevTickets) => {
-	return prevTickets
+export const getDestination = (obj = null,condition) => {
+    const {segments} = obj;
+switch(condition) {
+    case DEPARTURE:
+        const departure = segments[0];
+const {origin} = departure;
+const {destination} = departure;
+
+    return
+        default:
+            return obj;
+}
 }
