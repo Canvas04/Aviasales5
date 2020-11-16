@@ -28,5 +28,8 @@ export default function Checkboxes() {
 				{getCheckLabel(el.id, stateCheckboxes)}
 			</Checkbox>
 		)
-	})
+    })
+    return <>
+    {elements}
+    </>
 }
