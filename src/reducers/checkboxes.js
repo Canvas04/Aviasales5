@@ -1,4 +1,4 @@
-import { FILTER } from "../constants";
+import { FILTER, PRESS_CHECK } from "../constants";
 
 const initialState = {
     items: [
@@ -34,7 +34,7 @@ const initialState = {
 
   const checkboxes = (state=initialState,action) => {
     switch(action.type) {
-        case FILTER:
+        case PRESS_CHECK:
 
 if(action.id === 1) {
 if (state.selectAll) {
