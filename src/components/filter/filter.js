@@ -14,22 +14,24 @@ import filters from '../../action/filters'
 import { loadTickets } from '../../action/loadTickets'
 import Loader from '../loader/loader'
 import { counter } from '../../action/counter'
+import Checkboxes from '../checkboxes/checkboxes'
 
 export default function Filter() {
 	const dispatch = useDispatch()
 	const loadedTickets = useSelector((store) => store.loadTickets.tickets)
-	const checkboxes = [ALL, NO_STOPS, ONE_STOP, TWO_STOPS, THREE_STOPS].map(
-		(el, i) => {
-			return (
-				<Checkbox key={i} onChange={() => dispatch(filters(el, loadedTickets))}>
-					{el}
-				</Checkbox>
-			)
-		}
-	)
+	// const checkboxes = [ALL, NO_STOPS, ONE_STOP, TWO_STOPS, THREE_STOPS].map(
+	// 	(el, i) => {
+	// 		return (
+	// 			<Checkbox key={i} onChange={() => dispatch(filters(el, loadedTickets))}>
+	// 				{el}
+	// 			</Checkbox>
+	// 		)
+	// 	}
+	// )
 	return (
 		<>
-			{checkboxes}
+			{/* {checkboxes} */}
+            <Checkboxes />
 			<TabPanel />
 			<Button
 				type="primary"
