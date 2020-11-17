@@ -4,8 +4,8 @@ import {
 	NO_STOPS,
 	ONE_STOP,
 	THREE_STOPS,
-    TWO_STOPS,
-    ARRIVAL
+	TWO_STOPS,
+	ARRIVAL,
 } from '../constants'
 
 export const filterOnPrice = (arr) => {
@@ -85,37 +85,42 @@ export const filterOnLabel = (arr, label) => {
 	}
 }
 export const getDestination = (obj = null, condition) => {
-
-    const { segments } = obj
+	const { segments } = obj
 
 	switch (condition) {
 		case DEPARTURE:
-            const departure = segments[0]
-            const { origin : originDeparture } = departure
-			const { destination :destinationDeparture } = departure
-            return originDeparture + '-' + destinationDeparture;
-            case ARRIVAL:
-                const arrival = segments[1]
-			const {origin: originArrival } = arrival
-			const {destination:  destinationArrival } = arrival
+			const departure = segments[0]
+			const { origin: originDeparture } = departure
+			const { destination: destinationDeparture } = departure
+			return originDeparture + '-' + destinationDeparture
+		case ARRIVAL:
+			const arrival = segments[1]
+			const { origin: originArrival } = arrival
+			const { destination: destinationArrival } = arrival
 
-            return originArrival + '-' + destinationArrival;
+			return originArrival + '-' + destinationArrival
 		default:
 			return obj
 	}
 }
 
-const getCheck = (id,arr) => {
-    return arr.filter(el => el.id === id).map(el => el.checked)[0];
-  }
-  const getCheckLabel = (id,arr) => {
-    return arr
-    .filter((el) => el.id === id)
-    .map((el) => el.label)
-    .join(" ")
-  }
-  const getCheckId = (id,arr) => {
-    return arr.filter((el) => el.id === id).map((el) => el.id)[0]
-  }
+const getCheck = (id, arr) => {
+	return arr.filter((el) => el.id === id).map((el) => el.checked)[0]
+}
+const getCheckLabel = (id, arr) => {
+	return arr
+		.filter((el) => el.id === id)
+		.map((el) => el.label)
+		.join(' ')
+}
+const getCheckId = (id, arr) => {
+	return arr.filter((el) => el.id === id).map((el) => el.id)[0]
+}
 
-  export {getCheck,getCheckLabel,getCheckId};
+export { getCheck, getCheckLabel, getCheckId }
+
+export const converterMinutesToHours = (mins) => {
+    let hours = Math.trunc(mins/60);
+	let minutes = mins % 60;
+	return hours + 'ч. ' + minutes + 'м.';
+}
