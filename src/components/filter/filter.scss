@@ -1,0 +1,22 @@
+.filter {
+    display: flex;
+    justify-content: center;
+ }
+ .aside {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-right: 20px;
+    max-height: 265px;
+ }
+ .header {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 20px;
+ }
+ .search {
+    display: flex;
+    flex-direction: row;
+ }

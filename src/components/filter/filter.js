@@ -6,14 +6,22 @@ import { loadTickets } from '../../action/loadTickets'
 import Loader from '../loader/loader'
 import { counter } from '../../action/counter'
 import Checkboxes from '../checkboxes/checkboxes'
+import  './filter.scss'
+
+
 
 export default function Filter() {
 	const dispatch = useDispatch()
 
 	return (
-		<>
+		<div className='filter'>
+<aside className='aside'>
+<h1 className='header'>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
+ <Checkboxes />
+</aside>
+<aside className='search'>
 
-            <Checkboxes />
+
 			<TabPanel />
 			<Button
 				type="primary"
@@ -26,6 +34,7 @@ export default function Filter() {
 				Показать еще
 			</Button>
 			<Loader />
-		</>
+</aside>
+		</div>
 	)
 }

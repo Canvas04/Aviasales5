@@ -1,11 +1,10 @@
 import React from "react";
 import TicketListItem from "../tickets-list-item/tickets-list-item.js";
-import classes from './ticketList.module.scss';
-const {ul}  = classes;
+import './ticketList.scss';
 
 export default function TicketList() {
   return (
-    <ul className={ul}>
+    <ul className='ul'>
       <TicketListItem />
     </ul>
   );
