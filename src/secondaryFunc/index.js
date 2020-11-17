@@ -120,13 +120,13 @@ const getCheckId = (id, arr) => {
 export { getCheck, getCheckLabel, getCheckId }
 
 export const converterMinutesToHours = (mins) => {
-    let hours = Math.trunc(mins/60);
-	let minutes = mins % 60;
-	return hours + 'ч. ' + minutes + 'м.';
+	let hours = Math.trunc(mins / 60)
+	let minutes = mins % 60
+	return (hours + 'ч   ')  + "" + (minutes + 'м')
 }
 
-export const getDate = (obj = null, condition) =>  {
-    const { segments } = obj
+export const getDate = (obj = null, condition) => {
+	const { segments } = obj
 
 	switch (condition) {
 		case DEPARTURE:
