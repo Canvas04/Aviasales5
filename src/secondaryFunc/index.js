@@ -91,7 +91,7 @@ export const getDestination = (obj = null, condition) => {
 			const { origin } = departure
 			const { destination } = departure
 
-			return
+			return origin + '-' + destination;
 		default:
 			return obj
 	}
