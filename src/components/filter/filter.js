@@ -14,6 +14,7 @@ export default function Filter() {
 	const dispatch = useDispatch()
 
 	return (
+        <>
 		<div className='filter'>
 <aside className='aside'>
 <h1 className='header'>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
@@ -23,7 +24,11 @@ export default function Filter() {
 
 
 			<TabPanel />
-			<Button
+
+			<Loader />
+</aside>
+		</div>
+        <Button
 				type="primary"
 				className="btn btn-primary"
 				onClick={() => {
@@ -33,8 +38,6 @@ export default function Filter() {
 			>
 				Показать еще
 			</Button>
-			<Loader />
-</aside>
-		</div>
+            </>
 	)
 }
