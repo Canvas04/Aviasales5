@@ -85,18 +85,19 @@ export const filterOnLabel = (arr, label) => {
 	}
 }
 export const getDestination = (obj = null, condition) => {
-	const { segments } = obj
+
+    const { segments } = obj
+
 	switch (condition) {
 		case DEPARTURE:
-			const departure = segments[0]
-			const { originDeparture } = departure
-			const { destinationDeparture } = departure
-
+            const departure = segments[0]
+            const { origin : originDeparture } = departure
+			const { destination :destinationDeparture } = departure
             return originDeparture + '-' + destinationDeparture;
             case ARRIVAL:
                 const arrival = segments[1]
-			const { originArrival } = arrival
-			const { destinationArrival } = arrival
+			const {origin: originArrival } = arrival
+			const {destination:  destinationArrival } = arrival
 
             return originArrival + '-' + destinationArrival;
 		default:

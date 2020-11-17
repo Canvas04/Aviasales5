@@ -2,6 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import './ticketListItem.scss'
 import logo from './S7 Logo.svg'
+import { getDestination } from '../../secondaryFunc'
+import { DEPARTURE ,ARRIVAL} from '../../constants'
 
 export default function TicketListItem() {
 	const tickets = useSelector((store) => store.filters)
@@ -15,7 +17,7 @@ export default function TicketListItem() {
 					</div>
 					<div className="content">
 						<span>
-							<h4 className="minorHeader">MOW-HKT</h4>
+            <h4 className="minorHeader">{getDestination(item,DEPARTURE)}</h4>
 							<p>10:45 - 08:00</p>
 						</span>
 						<span>
@@ -29,7 +31,7 @@ export default function TicketListItem() {
 					</div>
 					<div className="content">
 						<span>
-							<h4 className="minorHeader">MOW-HKT</h4>
+							<h4 className="minorHeader">{getDestination(item,ARRIVAL)}</h4>
 							<p>10:45 - 08:00</p>
 						</span>
 						<span>
