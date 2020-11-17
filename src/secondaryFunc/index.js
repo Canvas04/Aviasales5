@@ -4,7 +4,8 @@ import {
 	NO_STOPS,
 	ONE_STOP,
 	THREE_STOPS,
-	TWO_STOPS,
+    TWO_STOPS,
+    ARRIVAL
 } from '../constants'
 
 export const filterOnPrice = (arr) => {
@@ -88,10 +89,16 @@ export const getDestination = (obj = null, condition) => {
 	switch (condition) {
 		case DEPARTURE:
 			const departure = segments[0]
-			const { origin } = departure
-			const { destination } = departure
+			const { originDeparture } = departure
+			const { destinationDeparture } = departure
 
-			return origin + '-' + destination;
+            return originDeparture + '-' + destinationDeparture;
+            case ARRIVAL:
+                const arrival = segments[1]
+			const { originArrival } = arrival
+			const { destinationArrival } = arrival
+
+            return originArrival + '-' + destinationArrival;
 		default:
 			return obj
 	}
