@@ -25,9 +25,9 @@ export const filterOnSpeed = (arr) => {
 }
 
 export const filterOnLength = (arr, counter) => {
-	let limit = 20
+	let limit = 7
 
-	if (arr.length > 20) {
+	if (arr.length > limit) {
 		for (let i = 1; i < counter; i++) {
 			limit += limit
 		}
