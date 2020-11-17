@@ -45,4 +45,3 @@ export default function TicketListItem() {
 	})
 	return <></>
 }
-// Установить эту версию npm install node-sass@4.14.0

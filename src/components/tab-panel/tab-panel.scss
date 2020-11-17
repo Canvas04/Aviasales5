@@ -1,0 +1,26 @@
+.str {
+    display: flex;
+    flex-direction: column;
+}
+.ant-tabs-nav-list {
+    display: flex;
+
+}
+.ant-tabs-tab {
+background-color: #ffffff;
+border: 1px solid #DFE5EC;
+border-radius: 3px;
+}
+.ant-tabs-tab-active {
+    background-color: #2196F3;
+    color: #ffffff
+}
+.ant-tabs-tab-btn {
+    padding: 15px 57px;
+}
+.ant-tabs-ink-bar {
+    display: none !important;
+}
+.ant-tabs-nav-operations {
+    display: none;
+}
