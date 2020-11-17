@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import filters from '../../action/filters';
+import TicketList from '../../components/tickets-list/tickets-list';
 import { FASTEST } from '../../constants';
 
 export default function Tab1 () {
@@ -11,6 +12,6 @@ useEffect(() => {
     dispatch(filters(FASTEST,tickets))
 })
 return <>
-<h1>Tab1</h1>
+<TicketList />
 </>
 }

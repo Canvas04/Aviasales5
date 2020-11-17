@@ -4,8 +4,9 @@ import './ticketListItem.scss'
 import logo from './S7 Logo.svg'
 
 export default function TicketListItem() {
-	const tickets = useSelector((store) => store.filters)
-	const elements = tickets.map((item) => {
+    const tickets = useSelector((store) => store.filters)
+if(tickets) {
+    	const elements = tickets.map((item) => {
 		return (
 			<li className='li' key={item.price}>
 				<div className='pricesAndLogo'>
@@ -43,5 +44,8 @@ export default function TicketListItem() {
 			</li>
 		)
 	})
-	return <></>
+}
+
+	return <>
+    </>
 }
