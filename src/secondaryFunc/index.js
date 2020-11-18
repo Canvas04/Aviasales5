@@ -147,18 +147,21 @@ export const getTime = (obj=null,condition) => {
 	switch (condition) {
 		case DEPARTURE:
 			const departure = segments[0]
-			const { date: dateDeparture } = departure
+            const { date: dateDeparture } = departure
+            console.log('dateDeparture', dateDeparture)
+
 			return dateDeparture
 		case ARRIVAL:
 			const arrival = segments[1]
-			const { date: dateArrival } = arrival
+            const { date: dateArrival } = arrival
+            console.log('dateDeparture', dateArrival)
 			return dateArrival
 		default:
 			return obj
 	}
 }
 export const convertDate = (dots) => {
-    var timeString = new Date().toTimeString().replace(/:[0-9]{2,2} .*/, '');
+    var timeString = new Date(dots).toTimeString().replace(/:[0-9]{2,2} .*/, '');
     return dots ? timeString : timeString.replace(/:/, ' ');
 
 }
