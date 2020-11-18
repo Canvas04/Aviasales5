@@ -157,3 +157,8 @@ export const getTime = (obj=null,condition) => {
 			return obj
 	}
 }
+export const convertDate = (dots) => {
+    var timeString = new Date().toTimeString().replace(/:[0-9]{2,2} .*/, '');
+    return dots ? timeString : timeString.replace(/:/, ' ');
+
+}
