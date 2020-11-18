@@ -168,12 +168,12 @@ export const getStops = (obj = null, condition) => {
 	switch (condition) {
 		case DEPARTURE:
 			const departure = segments[0]
-			const { stops: stopsDeparture } = departure
-			return stopsDeparture.length !== 0 ? stopsDeparture.join(',') : 'без пересадок'
+            const { stops: stopsDeparture } = departure
+return stopsDeparture.length !== 0 ? stopsDeparture.join() : 'без пересадок'
 		case ARRIVAL:
 			const arrival = segments[1]
-			const { date: stopsArrival } = arrival
-			return stopsArrival.length !== 0 ? stopsDeparture.join(',') : 'без пересадок'
+			const { stops: stopsArrival } = arrival
+return stopsArrival.length !== 0 ? stopsArrival.join() : 'без пересадок'
 		default:
 			return obj
 	}
