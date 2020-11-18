@@ -141,3 +141,19 @@ export const getDate = (obj = null, condition) => {
 			return obj
 	}
 }
+export const getTime = (obj=null,condition) => {
+    const { segments } = obj
+
+	switch (condition) {
+		case DEPARTURE:
+			const departure = segments[0]
+			const { date: dateDeparture } = departure
+			return dateDeparture
+		case ARRIVAL:
+			const arrival = segments[1]
+			const { date: dateArrival } = arrival
+			return dateArrival
+		default:
+			return obj
+	}
+}
