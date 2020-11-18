@@ -122,7 +122,7 @@ export { getCheck, getCheckLabel, getCheckId }
 export const converterMinutesToHours = (mins) => {
 	let hours = Math.trunc(mins / 60)
 	let minutes = mins % 60
-	return (hours + 'ч   ')  + "" + (minutes + 'м')
+	return hours + 'ч   ' + '' + (minutes + 'м')
 }
 
 export const getDate = (obj = null, condition) => {
@@ -141,27 +141,23 @@ export const getDate = (obj = null, condition) => {
 			return obj
 	}
 }
-export const getTime = (obj=null,condition) => {
-    const { segments } = obj
+export const getTime = (obj = null, condition) => {
+	const { segments } = obj
 
 	switch (condition) {
 		case DEPARTURE:
 			const departure = segments[0]
-            const { date: dateDeparture } = departure
-            console.log('dateDeparture', dateDeparture)
-
+			const { date: dateDeparture } = departure
 			return dateDeparture
 		case ARRIVAL:
 			const arrival = segments[1]
-            const { date: dateArrival } = arrival
-            console.log('dateDeparture', dateArrival)
+			const { date: dateArrival } = arrival
 			return dateArrival
 		default:
 			return obj
 	}
 }
 export const convertDate = (dots) => {
-    var timeString = new Date(dots).toTimeString().replace(/:[0-9]{2,2} .*/, '');
-    return dots ? timeString : timeString.replace(/:/, ' ');
-
+	var timeString = new Date(dots).toTimeString().replace(/:[0-9]{2,2} .*/, '')
+	return dots ? timeString : timeString.replace(/:/, ' ')
 }
