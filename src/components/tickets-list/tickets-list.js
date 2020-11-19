@@ -13,7 +13,7 @@ export default function TicketList() {
 		<ul className="ul">
 			<TicketListItem />
 		</ul>
-        { !isLoading && <button type="button" class="btn btn-primary btn-md btn-block" onClick={() => {
+        { !isLoading && <button type="button" className="btn btn-primary btn-md btn-block" onClick={() => {
 					dispatch(loadTickets())
 					dispatch(counter())
 				}}>Показать ещё</button>}
