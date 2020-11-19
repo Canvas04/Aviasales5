@@ -169,11 +169,11 @@ export const getStops = (obj = null, condition) => {
 		case DEPARTURE:
 			const departure = segments[0]
             const { stops: stopsDeparture } = departure
-return stopsDeparture.length !== 0 ? stopsDeparture.join() : 0
+return stopsDeparture.length !== 0 ? stopsDeparture.join() : 'прямой'
 		case ARRIVAL:
 			const arrival = segments[1]
 			const { stops: stopsArrival } = arrival
-return stopsArrival.length !== 0 ? stopsArrival.join() : 0
+return stopsArrival.length !== 0 ? stopsArrival.join() : 'прямой'
 		default:
 			return obj
 	}
