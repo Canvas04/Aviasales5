@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import './ticketListItem.scss'
 import logo from './S7 Logo.svg'
-import { converterMinutesToHours, getDate, getDestination, getTime,convertDate } from '../../secondaryFunc'
+import { converterMinutesToHours, getDate, getDestination, getTime,convertDate ,getStops} from '../../secondaryFunc'
 import { DEPARTURE ,ARRIVAL} from '../../constants'
 
 export default function TicketListItem() {
@@ -25,8 +25,8 @@ export default function TicketListItem() {
             <p> {converterMinutesToHours(getDate(item,DEPARTURE)) }</p>
 						</span>
 						<span>
-							<h4 className="minorHeader">2 ПЕРЕСАДКИ</h4>
-							<p>HKG,JNB</p>
+							<h4 className="minorHeader">ПЕРЕСАДКИ</h4>
+            <p>{getStops(item,DEPARTURE)}</p>
 						</span>
 					</div>
 					<div className="content">
@@ -39,8 +39,8 @@ export default function TicketListItem() {
 							<p>{converterMinutesToHours(getDate(item,ARRIVAL)) }</p>
 						</span>
 						<span>
-							<h4 className="minorHeader">2 ПЕРЕСАДКИ</h4>
-							<p>HKG,JNB</p>
+							<h4 className="minorHeader">ПЕРЕСАДКИ</h4>
+							<p>{getStops(item,ARRIVAL)}</p>
 						</span>
 					</div>
 				</li>
