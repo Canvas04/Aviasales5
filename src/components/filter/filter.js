@@ -3,7 +3,6 @@ import { Button } from 'antd'
 import TabPanel from '../tab-panel/tab-panel'
 import { useDispatch} from 'react-redux'
 import { loadTickets } from '../../action/loadTickets'
-import Loader from '../loader/loader'
 import { counter } from '../../action/counter'
 import Checkboxes from '../checkboxes/checkboxes'
 import  './filter.scss'
@@ -25,7 +24,6 @@ export default function Filter() {
 
 			<TabPanel />
 
-			<Loader />
 </aside>
 		</div>
         <Button
