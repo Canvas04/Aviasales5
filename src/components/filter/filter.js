@@ -26,16 +26,7 @@ export default function Filter() {
 
 </aside>
 		</div>
-        {/* <Button
-				type="primary"
-				className="btn btn-primary"
-				onClick={() => {
-					dispatch(loadTickets())
-					dispatch(counter())
-				}}
-			>
-				Показать еще
-			</Button> */}
+       
             </>
 	)
 }
