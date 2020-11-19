@@ -4,6 +4,7 @@ import './ticketListItem.scss'
 import logo from './S7 Logo.svg'
 import { converterMinutesToHours, getDate, getDestination, getTime,convertDate ,getStops} from '../../secondaryFunc'
 import { DEPARTURE ,ARRIVAL} from '../../constants'
+import Loader from '../loader/loader'
 
 export default function TicketListItem() {
 	const tickets = useSelector((store) => store.filters)
@@ -46,7 +47,10 @@ export default function TicketListItem() {
 				</li>
 			)
 		})
-		return <>{elements}</>
+		return <>
+        <Loader />
+        {elements}
+        </>
     }
 
     return <> </>
