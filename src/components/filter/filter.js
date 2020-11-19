@@ -26,7 +26,7 @@ export default function Filter() {
 
 </aside>
 		</div>
-        <Button
+        {/* <Button
 				type="primary"
 				className="btn btn-primary"
 				onClick={() => {
@@ -35,7 +35,7 @@ export default function Filter() {
 				}}
 			>
 				Показать еще
-			</Button>
+			</Button> */}
             </>
 	)
 }
