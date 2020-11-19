@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getCheckId, getCheckLabel, getCheck } from '../../secondaryFunc/index'
 import { pressCheck } from '../../action/checkboxes'
 import filters from '../../action/filters'
+import './checkboxes.scss'
 
 export default function Checkboxes() {
 	const dispatch = useDispatch()
