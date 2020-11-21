@@ -17,31 +17,31 @@ export default function TicketListItem() {
 						<img src={logo} alt={'S7 AirLines'} />
 					</div>
 					<div className="content">
-						<span>
+						<span >
             <h4 className="minorHeader">{getDestination(item,DEPARTURE)}</h4>
-            <p>{convertDate(getTime(item,DEPARTURE))}</p>
+            <p className='content__el content__el_duration'>{convertDate(getTime(item,DEPARTURE))}</p>
 						</span>
 						<span>
 							<h4 className="minorHeader">В ПУТИ</h4>
-            <p> {converterMinutesToHours(getDate(item,DEPARTURE)) }</p>
+            <p className='content__el content__el_hours'> {converterMinutesToHours(getDate(item,DEPARTURE)) }</p>
 						</span>
 						<span>
             <h4 className="minorHeader">{makeStrForStops(item.stopsForDeparture)}</h4>
-            <p>{getStops(item,DEPARTURE)}</p>
+            <p className='content__el content__el_stops'>{getStops(item,DEPARTURE)}</p>
 						</span>
 					</div>
 					<div className="content">
 						<span>
 							<h4 className="minorHeader">{getDestination(item,ARRIVAL)}</h4>
-            <p>{convertDate(getTime(item,ARRIVAL))}</p>
+            <p className='content__el content__el_hours'>{convertDate(getTime(item,ARRIVAL))}</p>
 						</span>
-						<span>
+						<span >
 							<h4 className="minorHeader">В ПУТИ</h4>
-							<p>{converterMinutesToHours(getDate(item,ARRIVAL)) }</p>
+							<p className='content__el content__el_duration'>{converterMinutesToHours(getDate(item,ARRIVAL)) }</p>
 						</span>
 						<span>
 							<h4 className="minorHeader">{makeStrForStops(item.stopsForArrival)}</h4>
-							<p>{getStops(item,ARRIVAL)}</p>
+							<p className='content__el content__el_stops'>{getStops(item,ARRIVAL)}</p>
 						</span>
 					</div>
 				</li>
