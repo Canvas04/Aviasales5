@@ -12,13 +12,24 @@ const { TabPane } = Tabs
 export default function TabPanel() {
     const dispatch = useDispatch();
     const tickets = useSelector(store => store.loadTickets.tickets)
+
+    const handlerOnTabClick = (key) => {
+
+        if(key === '1') {
+            dispatch(filters(CHEAPEST,tickets))
+        }
+        if(key ==='2') {
+            dispatch(filters(FASTEST,tickets))
+        }
+
+    }
 	return (
 		<>
-			<Tabs defaultActiveKey="1" type="card" size={'large'} onChange={() => dispatch(filters(FASTEST,tickets))} >
-				<TabPane tab="Самый дешевый" key="1" >
+			<Tabs defaultActiveKey="1" type="card" size={'large'} onTabClick={(key) => handlerOnTabClick(key)} >
+				<TabPane tab="САМЫЙ ДЕШЕВЫЙ" key="1" >
 					<Tab1 />
 				</TabPane>
-				<TabPane tab="Caмый быстрый" key="2">
+				<TabPane tab="CАМЫЙ БЫСТРЫЙ" key='2'>
 					<Tab2 />
 				</TabPane>
 			</Tabs>
