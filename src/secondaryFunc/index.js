@@ -168,14 +168,14 @@ export const getStops = (obj = null, condition) => {
 	switch (condition) {
 		case DEPARTURE:
 			const departure = segments[0]
-            const { stops: stopsDeparture } = departure
-return stopsDeparture.length !== 0 ? stopsDeparture.join() : 'прямой'
+			const { stops: stopsDeparture } = departure
+			return stopsDeparture.length !== 0 ? stopsDeparture.join() : 'прямой'
 		case ARRIVAL:
 			const arrival = segments[1]
 			const { stops: stopsArrival } = arrival
-return stopsArrival.length !== 0 ? stopsArrival.join() : 'прямой'
+			return stopsArrival.length !== 0 ? stopsArrival.join() : 'прямой'
 		default:
 			return obj
 	}
 }
-// почему то когда без пересадок , то верстка плывет вправо
+
