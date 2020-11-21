@@ -61,7 +61,9 @@ export const filterOnStops = (arr, num) => {
 			...el,
 			stops: segments.reduce(
 				(acc, current) => acc.stops.length + current.stops.length
-			),
+            ),
+            stopsForDeparture: segments[0].stops.length,
+            stopsForArrival: segments[1].stops.length
 		}
 	})
 
@@ -78,7 +80,7 @@ export const filterOnStops = (arr, num) => {
 			return needTickets
 		}
 	} else {
-		return arr
+		return arrWithStops
 	}
 }
 
