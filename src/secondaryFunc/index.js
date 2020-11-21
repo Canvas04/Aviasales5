@@ -10,18 +10,34 @@ import {
 
 export const filterOnPrice = (arr) => {
 	const copyArr = arr.slice()
-	return copyArr.sort((a, b) => {
+	copyArr.sort((a, b) => {
 		return a.price - b.price
+	})
+	return copyArr.map((el) => {
+		const { segments } = el
+		return {
+			...el,
+            stopsForDeparture: segments[0].stops.length,
+            stopsForArrival: segments[1].stops.length
+		}
 	})
 }
 export const filterOnSpeed = (arr) => {
 	const copyArr = arr.slice()
 
-	return copyArr.sort((a, b) => {
+	copyArr.sort((a, b) => {
 		return (
 			a.segments.reduce((acc, current) => acc.duration + current.duration) -
 			b.segments.reduce((acc, current) => acc.duration + current.duration)
 		)
+	})
+	return copyArr.map((el) => {
+		const { segments } = el
+		return {
+			...el,
+			stopsForDeparture: segments[0].stops.length,
+            stopsForArrival: segments[1].stops.length
+		}
 	})
 }
 
@@ -179,3 +195,19 @@ export const getStops = (obj = null, condition) => {
 	}
 }
 
+ export const makeStrForStops = (counter) => {
+	switch (counter) {
+		case 0:
+			return '0 ПЕРЕСАДОК'
+		case 1:
+			return '1 ПЕРЕСАДКА'
+		case 2:
+			return '2 ПЕРЕСАДКИ'
+		case 3:
+			return '3 ПЕРЕСАДКИ'
+		case 4:
+			return '2 ПЕРЕСАДКИ'
+		default:
+			return `${counter} ПЕРЕСАДОК`
+	}
+}
