@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import './ticketListItem.scss'
 import logo from './S7 Logo.svg'
-import { converterMinutesToHours, getDate, getDestination, getTime,convertDate ,getStops, makeStrForStops} from '../../secondaryFunc'
+import { converterMinutesToHours, getDate, getDestination, getTime,convertDate ,getStops, makeStrForStops, divideOnRanges} from '../../secondaryFunc'
 import { DEPARTURE ,ARRIVAL} from '../../constants'
 import Loader from '../loader/loader'
 
@@ -13,7 +13,7 @@ export default function TicketListItem() {
 			return (
 				<li className="li" key={item.price}>
 					<div className="pricesAndLogo">
-						<h3>{item.price}</h3>
+						<h3>{divideOnRanges(item.price)}</h3>
 						<img src={logo} alt={'S7 AirLines'} />
 					</div>
 					<div className="content">
