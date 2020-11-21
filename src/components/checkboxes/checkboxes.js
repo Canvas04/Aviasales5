@@ -9,7 +9,8 @@ import './checkboxes.scss'
 export default function Checkboxes() {
 	const dispatch = useDispatch()
 	const stateCheckboxes = useSelector((store) => store.checkboxes.items)
-	const loadedTickets = useSelector((store) => store.loadTickets.tickets)
+    const loadedTickets = useSelector((store) => store.loadTickets.tickets)
+    const storeCheckboxes = useSelector(store => store.checkboxes)
 	const elements = stateCheckboxes.map((el) => {
 		return (
 			<Checkbox
@@ -18,7 +19,8 @@ export default function Checkboxes() {
                     dispatch(
 						pressCheck(
 							getCheckId(el.id, stateCheckboxes),
-							getCheckLabel(el.id, stateCheckboxes)
+                            getCheckLabel(el.id, stateCheckboxes),
+                            storeCheckboxes
 						)
                     )
                     dispatch( filters(getCheckLabel(el.id, stateCheckboxes),loadedTickets))

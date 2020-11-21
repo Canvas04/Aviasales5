@@ -17,8 +17,8 @@ export const filterOnPrice = (arr) => {
 		const { segments } = el
 		return {
 			...el,
-            stopsForDeparture: segments[0].stops.length,
-            stopsForArrival: segments[1].stops.length
+			stopsForDeparture: segments[0].stops.length,
+			stopsForArrival: segments[1].stops.length,
 		}
 	})
 }
@@ -36,7 +36,7 @@ export const filterOnSpeed = (arr) => {
 		return {
 			...el,
 			stopsForDeparture: segments[0].stops.length,
-            stopsForArrival: segments[1].stops.length
+			stopsForArrival: segments[1].stops.length,
 		}
 	})
 }
@@ -61,9 +61,9 @@ export const filterOnStops = (arr, num) => {
 			...el,
 			stops: segments.reduce(
 				(acc, current) => acc.stops.length + current.stops.length
-            ),
-            stopsForDeparture: segments[0].stops.length,
-            stopsForArrival: segments[1].stops.length
+			),
+			stopsForDeparture: segments[0].stops.length,
+			stopsForArrival: segments[1].stops.length,
 		}
 	})
 
@@ -197,7 +197,7 @@ export const getStops = (obj = null, condition) => {
 	}
 }
 
- export const makeStrForStops = (counter) => {
+export const makeStrForStops = (counter) => {
 	switch (counter) {
 		case 0:
 			return '0 ПЕРЕСАДОК'
@@ -215,20 +215,36 @@ export const getStops = (obj = null, condition) => {
 }
 
 export const divideOnRanges = (num) => {
+	const int = String(Math.trunc(num))
+	if (int.length <= 3) return int
+	let space = 0
+	let number = ''
 
-    const int = String(Math.trunc(num))
-    if (int.length <=3) return int
-    let space = 0
-    let number = ''
-
-    for (let i = int.length -1; i >= 0; i--) {
-        if(space === 3) {
-			number = ' ' + number;
-			space = 0;
+	for (let i = int.length - 1; i >= 0; i--) {
+		if (space === 3) {
+			number = ' ' + number
+			space = 0
 		}
-		number = int.charAt(i) + number;
+		number = int.charAt(i) + number
 		space++
+	}
+	return number + ' Р'
+}
 
-    }
-    return number + ' Р';
+export const changeCheckboxes = (obj, id) => {
+	const allSelected = obj.items.map((el) => {
+		return {
+			...el,
+			checked: !el.checked,
+		}
+	})
+
+
+	if (id === 1) {
+		return { items: allSelected, selectAll: true }
+	}
+	if (id > 1 || id < 6) {
+
+	}
+	return obj
 }
