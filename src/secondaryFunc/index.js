@@ -100,7 +100,8 @@ export const filterOnLabel = (arr, label) => {
 
 		default:
 			return arr
-	}
+    }
+
 }
 export const getDestination = (obj = null, condition) => {
 	const { segments } = obj
@@ -230,4 +231,4 @@ export const divideOnRanges = (num) => {
 	}
 	return number + ' Р'
 }
-
+export const defineActiveTab = (tab) => tab
