@@ -45,6 +45,6 @@ const getTickets = (filter) => {
 			return filterOnLabel(filter.payload, filter.nameFilter)
 
 		default:
-			return filter.payload
+			return filterOnPrice(filter.payload)
 	}
 }
