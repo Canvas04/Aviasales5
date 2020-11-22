@@ -44,10 +44,10 @@ return getCheck(action)
 const getCheck = (action) => {
 	switch (action.id) {
 		case 1: return changeCheckboxes(action.payload,1)
-		case 2:
-		case 3:
-		case 4:
-		case 5:
+		case 2: return changeCheckboxes(action.payload,2)
+		case 3: return changeCheckboxes(action.payload,3)
+		case 4:return changeCheckboxes(action.payload,4)
+		case 5:return changeCheckboxes(action.payload,5)
 		default:
 			return action.payload
 	}
