@@ -25,7 +25,6 @@ export function GroupCheck() {
 		setCheckedList(list)
 		setCheckAll(list.length === plainOptions.length)
         dispatch(filters(list[list.length -1], loadedTickets))
-        console.log(list[list.length -1],list.length)
 	}
 	const onCheckAllChange = (e) => {
 		setCheckedList(e.target.checked ? plainOptions : [])
