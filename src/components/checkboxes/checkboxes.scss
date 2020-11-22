@@ -1,3 +1,7 @@
 .ant-checkbox > span {
     margin-left: 3px;
 }
+.ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
