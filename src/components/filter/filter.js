@@ -4,7 +4,7 @@ import TabPanel from '../tab-panel/tab-panel'
 import { useDispatch} from 'react-redux'
 import { loadTickets } from '../../action/loadTickets'
 import { counter } from '../../action/counter'
-import Checkboxes from '../checkboxes/checkboxes'
+import Checkboxes, { GroupCheck } from '../checkboxes/checkboxes'
 import  './filter.scss'
 
 
@@ -17,7 +17,7 @@ export default function Filter() {
 		<div className='filter'>
 <aside className='aside'>
 <h1 className='header'>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
- <Checkboxes />
+ <GroupCheck />
 </aside>
 <aside className='search'>
 
@@ -26,7 +26,8 @@ export default function Filter() {
 
 </aside>
 		</div>
-       
+
+
             </>
 	)
 }
