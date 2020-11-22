@@ -11,7 +11,6 @@ import {
 	ALL,
 } from '../../constants/index'
 
-
 const plainOptions = [NO_STOPS, ONE_STOP, TWO_STOPS, THREE_STOPS]
 const defaultCheckedList = []
 const CheckboxGroup = Checkbox.Group
@@ -24,18 +23,19 @@ export function GroupCheck() {
 	const onChange = (list) => {
 		setCheckedList(list)
 		setCheckAll(list.length === plainOptions.length)
-        dispatch(filters(list[list.length -1], loadedTickets))
+		dispatch(filters(list[list.length - 1], loadedTickets))
 	}
 	const onCheckAllChange = (e) => {
 		setCheckedList(e.target.checked ? plainOptions : [])
-        setCheckAll(e.target.checked)
-        dispatch(filters(ALL,loadedTickets))
+		setCheckAll(e.target.checked)
+		dispatch(filters(ALL, loadedTickets))
 	}
 	return (
 		<>
 			<Checkbox onChange={onCheckAllChange} checked={checkAll}>
 				{ALL}
 			</Checkbox>
+
 			<CheckboxGroup
 				options={plainOptions}
 				value={checkedList}
