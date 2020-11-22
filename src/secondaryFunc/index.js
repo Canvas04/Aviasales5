@@ -231,36 +231,3 @@ export const divideOnRanges = (num) => {
 	return number + ' Р'
 }
 
-export const changeCheckboxes = (obj, id) => {
-	const allSelected = obj.items.map((el) => {
-		return {
-			...el,
-			checked: !el.checked,
-		}
-	})
-
-	const oneSelected = obj.items.map((el) => {
-
-
-
-		if (el.id === id) {
-
-			return {
-				...el,
-				checked: !el.checked,
-			}
-        }
-        
-if(el.id > 1 && el.id < 6 && el.checked === true) {
-
-        }
-
-		return { ...el }
-	})
-	if (id === 1) {
-		return { items: allSelected, selectAll: true }
-	}
-	if (id > 1 || id < 6) {
-		return { items: oneSelected, selectAll: false }
-	}
-}
