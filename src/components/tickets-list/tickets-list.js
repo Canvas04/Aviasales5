@@ -10,7 +10,7 @@ export default function TicketList() {
     const dispatch = useDispatch()
 	return (
         <>
-		<ul className="ul">
+		<ul className="tickets">
 			<TicketListItem />
 		</ul>
         { !isLoading && <button type="button" className="btn btn-primary btn-md btn-block" onClick={() => {
