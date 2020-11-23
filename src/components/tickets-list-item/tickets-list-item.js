@@ -11,7 +11,7 @@ export default function TicketListItem() {
 	if (tickets) {
 		const elements = tickets.map((item) => {
 			return (
-				<li className="li" key={item.price}>
+				<li className="tickets__item" key={item.price}>
 					<div className="pricesAndLogo">
 						<h3>{divideOnRanges(item.price)}</h3>
 						<img src={logo} alt={'S7 AirLines'} />
