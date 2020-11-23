@@ -1,15 +1,10 @@
 import React from 'react'
-import { Button } from 'antd'
 import TabPanel from '../tab-panel/tab-panel'
 import { useDispatch } from 'react-redux'
-import { loadTickets } from '../../action/loadTickets'
-import { counter } from '../../action/counter'
-import Checkboxes, { GroupCheck } from '../checkboxes/checkboxes'
+import  { GroupCheck } from '../checkboxes/checkboxes'
 import './filter.scss'
-import { divideOnRanges } from '../../secondaryFunc'
 
 export default function Filter() {
-	const dispatch = useDispatch()
 
 	return (
 		<>
