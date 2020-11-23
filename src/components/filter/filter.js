@@ -1,6 +1,5 @@
 import React from 'react'
 import TabPanel from '../tab-panel/tab-panel'
-import { useDispatch } from 'react-redux'
 import  { GroupCheck } from '../checkboxes/checkboxes'
 import './filter.scss'
 
