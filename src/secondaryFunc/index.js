@@ -1,4 +1,6 @@
-import {
+import {actionsForFilters} from '../constants/index'
+
+const  {
 	ALL,
 	DEPARTURE,
 	NO_STOPS,
@@ -6,7 +8,8 @@ import {
 	THREE_STOPS,
 	TWO_STOPS,
 	ARRIVAL,
-} from '../constants'
+} = actionsForFilters
+
 
 export const filterOnPrice = (arr) => {
 	const copyArr = arr.slice()
