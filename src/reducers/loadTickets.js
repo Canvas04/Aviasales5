@@ -1,8 +1,10 @@
-import {
+import {actionsForLoading} from '../constants/index'
+
+const  {
     FETCH_REQUEST_TICKETS,
     FETCH_RECEIVE_TICKETS,
     FETCH_FAILURE_TICKETS,
-  } from "../constants";
+  } = actionsForLoading
 
   const initialState = {
     isFetching: false,

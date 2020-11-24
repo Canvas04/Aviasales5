@@ -1,11 +1,12 @@
-import {
-	FETCH_REQUEST_TICKETS,
-	FETCH_RECEIVE_TICKETS,
-	FETCH_FAILURE_TICKETS,
+import {actionsForLoading,urlConstants} from '../constants'
+const {
+
 	TICKETS_URL,
 	SEARCH_URL,
-} from '../constants'
-
+} = urlConstants
+const {FETCH_REQUEST_TICKETS,
+	FETCH_RECEIVE_TICKETS,
+	FETCH_FAILURE_TICKETS} = actionsForLoading
 const requestTickets = () => {
 	return {
 		type: FETCH_REQUEST_TICKETS,

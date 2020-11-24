@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux'
 import './ticketListItem.scss'
 import logo from './S7 Logo.svg'
 import { converterMinutesToHours, getDate, getDestination, getTime,convertDate ,getStops, makeStrForStops, divideOnRanges} from '../../secondaryFunc'
-import { DEPARTURE ,ARRIVAL} from '../../constants'
+import {actionsForFilters} from '../../constants/index'
 import Loader from '../loader/loader'
+
+const { DEPARTURE ,ARRIVAL} = actionsForFilters
 
 export default function TicketListItem() {
 	const tickets = useSelector((store) => store.filters)

@@ -5,9 +5,9 @@ import Tab2 from '../../containers/tab2/tab2'
 import './tab-panel.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import filters from '../../action/filters'
-import { CHEAPEST, FASTEST } from '../../constants'
+import {actionsForFilters} from '../../constants'
 import { defineActiveTab } from '../../secondaryFunc'
-
+const  { CHEAPEST, FASTEST } = actionsForFilters
 const { TabPane } = Tabs
 
 export default function TabPanel() {

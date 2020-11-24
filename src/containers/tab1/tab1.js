@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import filters from '../../action/filters';
 import TicketList from '../../components/tickets-list/tickets-list';
-import { CHEAPEST } from '../../constants';
+import {actionsForFilters} from '../../constants'
+const { CHEAPEST } = actionsForFilters
 
 export default function Tab1 () {
 const dispatch = useDispatch();

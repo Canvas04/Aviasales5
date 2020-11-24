@@ -3,13 +3,15 @@ import { Checkbox } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import filters from '../../action/filters'
 import './checkboxes.scss'
-import {
+import {actionsForFilters} from '../../constants/index'
+
+const  {
 	NO_STOPS,
 	ONE_STOP,
 	TWO_STOPS,
 	THREE_STOPS,
 	ALL,
-} from '../../constants/index'
+} = actionsForFilters
 
 const plainOptions = [NO_STOPS, ONE_STOP, TWO_STOPS, THREE_STOPS]
 const defaultCheckedList = []
