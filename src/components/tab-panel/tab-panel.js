@@ -1,4 +1,5 @@
 import React from 'react'
+// import from 'react-scrollbar'
 import { Tabs } from 'antd'
 import Tab1 from '../../containers/tab1/tab1'
 import Tab2 from '../../containers/tab2/tab2'
@@ -26,9 +27,10 @@ defineActiveTab(key)
 
     }
 
+
 	return (
 		<>
-			<Tabs defaultActiveKey="1" type="card" size={'large'} onTabClick={(key) => handlerOnTabClick(key)} >
+			<Tabs defaultActiveKey="1" type="card" size={'large'}  onTabClick={(key) => handlerOnTabClick(key)} >
 				<TabPane tab="САМЫЙ ДЕШЕВЫЙ" key="1" >
 					<Tab1 />
 				</TabPane>
