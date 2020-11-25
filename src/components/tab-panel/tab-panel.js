@@ -1,5 +1,4 @@
 import React from 'react'
-// import from 'react-scrollbar'
 import { Tabs } from 'antd'
 import Tab1 from '../../containers/tab1/tab1'
 import Tab2 from '../../containers/tab2/tab2'
