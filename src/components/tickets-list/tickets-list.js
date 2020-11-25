@@ -13,10 +13,7 @@ export default function TicketList() {
 		<ul className="tickets">
 			<TicketListItem />
 		</ul>
-        { !isLoading && <button type="button" className="btn btn-primary btn-md btn-block" onClick={() => {
-					dispatch(loadTickets())
-					dispatch(counter())
-				}}>Показать ещё</button>}
+      
         </>
 	)
 }
