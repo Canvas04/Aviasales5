@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import filters from '../../action/filters'
 import './checkboxes.scss'
 import {actionsForFilters} from '../../constants/index'
+import CheckboxGroups from '../checkboxes-group/checkboxes-group'
 
 const  {
 	NO_STOPS,
@@ -15,7 +16,7 @@ const  {
 
 const plainOptions = [NO_STOPS, ONE_STOP, TWO_STOPS, THREE_STOPS]
 const defaultCheckedList = []
-const CheckboxGroup = Checkbox.Group
+// const CheckboxGroup = Checkbox.Group
 
 export function GroupCheck() {
 	const [checkedList, setCheckedList] = useState(defaultCheckedList)
@@ -34,7 +35,7 @@ export function GroupCheck() {
 	}
 	return (
 		<>
-			<Checkbox onChange={onCheckAllChange} checked={checkAll}>
+			{/* <Checkbox onChange={onCheckAllChange} checked={checkAll}>
 				{ALL}
 			</Checkbox>
 
@@ -42,7 +43,8 @@ export function GroupCheck() {
 				options={plainOptions}
 				value={checkedList}
 				onChange={onChange}
-			/>
+			/> */}
+            <CheckboxGroups />
 		</>
 	)
 }

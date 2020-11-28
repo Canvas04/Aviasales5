@@ -5,3 +5,12 @@
     display: flex;
     flex-direction: column;
 }
+
+.ant-checkbox-wrapper-checked {
+    border: none !important;
+}
+.ant-checkbox-input {
+    width: 20px !important;
+    height:20px !important;
+
+}

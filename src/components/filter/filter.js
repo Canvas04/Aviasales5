@@ -3,15 +3,19 @@ import TabPanel from '../tab-panel/tab-panel'
 import  { GroupCheck } from '../checkboxes/checkboxes'
 import './filter.scss'
 
+
 export default function Filter() {
 
 	return (
 		<>
 			<div className="filter">
-				<div className="filter__checkboxes">
-					<h1 className="filter__header">КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
+
+                    <ul className="filter__checkboxes">
+				<li className='filter__item'><h1 className="filter__header">КОЛИЧЕСТВО ПЕРЕСАДОК</h1></li>
 					<GroupCheck />
-				</div>
+				</ul>
+
+
 				<div className="filter__tab-panel">
 					<TabPanel />
 				</div>

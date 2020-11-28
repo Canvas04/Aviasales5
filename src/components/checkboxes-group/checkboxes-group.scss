@@ -1,0 +1,55 @@
+
+input[type="checkbox"] {
+ display: none;
+}
+
+.item__label {
+  color: #000;
+ cursor: default;
+ font-size: 13px ;
+ font-weight: 400;
+ line-height: 30px;
+ padding:  5px 20px;
+display: block;
+
+}
+
+label:before {
+ content: " ";
+ color: #000;
+ display: inline-block;
+ font: 20px 'Open Sans';
+ margin-right: 15px;
+ position: relative;
+ text-align: center;
+ text-indent: 0px;
+ width: 20px;
+ height: 20px;
+ background: #FFF;
+ border: 1px solid #9ABBCE;
+ border-radius: 2px;
+ border-image: initial;
+ vertical-align: middle;
+}
+
+input:checked + label:before {
+/* глифон - галочка */
+ content: "";
+ background-image: url("Shape.svg");
+ background-repeat: no-repeat;
+ background-position: center center;
+ border: 1px solid #2196F3;
+ background-color: #F1FCFF ;
+}
+
+input:disabled + label:before {
+ background: #eee;
+ color: #aaa;
+}
+label:hover {
+    background-color: #F1FCFF;
+    cursor: pointer;
+}
+label {
+    margin-bottom: 0;
+}

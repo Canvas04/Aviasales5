@@ -5,16 +5,18 @@
  .filter__checkboxes{
     display: flex;
     flex-direction: column;
-    padding: 20px;
     background-color: #ffffff;
+    padding: 0;
     margin-right: 20px;
-    max-height: 265px;
+    max-height: 275px;
+    list-style: none;
+
  }
  .filter__header {
     font-weight: 600;
     font-size: 12px;
     line-height: 12px;
-    margin-bottom: 20px;
+    margin: 20px
  }
  .filter__tab-panel {
     display: flex;
@@ -27,4 +29,7 @@
     .aside {
         padding-left: 40%;
     }
+}
+body {
+    background-color: #E5E5E5;
 }
