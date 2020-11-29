@@ -1,4 +1,4 @@
-import {actionsForFilters} from '../constants/index'
+import { actionsForFilters } from '../constants/index'
 import {
 	filterOnLabel,
 	filterOnPrice,
@@ -6,7 +6,7 @@ import {
 	filterOnLength,
 } from '../secondaryFunc'
 
-const  {
+const {
 	ALL,
 	CHEAPEST,
 	FASTEST,
@@ -16,7 +16,6 @@ const  {
 	TWO_STOPS,
 	ONE_STOP,
 } = actionsForFilters
-
 
 const filters = (state = null, action) => {
 	switch (action.type) {

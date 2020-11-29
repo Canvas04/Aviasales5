@@ -1,12 +1,10 @@
-import {actionsForLoading,urlConstants} from '../constants'
+import { actionsForLoading, urlConstants } from '../constants'
+const { TICKETS_URL, SEARCH_URL } = urlConstants
 const {
-
-	TICKETS_URL,
-	SEARCH_URL,
-} = urlConstants
-const {FETCH_REQUEST_TICKETS,
+	FETCH_REQUEST_TICKETS,
 	FETCH_RECEIVE_TICKETS,
-	FETCH_FAILURE_TICKETS} = actionsForLoading
+	FETCH_FAILURE_TICKETS,
+} = actionsForLoading
 const requestTickets = () => {
 	return {
 		type: FETCH_REQUEST_TICKETS,
@@ -28,8 +26,8 @@ const errorLoadTickets = (error) => {
 }
 
 export function loadTickets() {
-	return async (dispatch,store) => {
-         const prevTickets = store().loadTickets.tickets
+	return async (dispatch, store) => {
+		const prevTickets = store().loadTickets.tickets
 		const callId = await fetch(SEARCH_URL)
 		const searchId = await callId.json()
 		dispatch(requestTickets())
@@ -37,7 +35,7 @@ export function loadTickets() {
 		try {
 			const callTickets = await fetch(`${TICKETS_URL}=${searchId.searchId}`)
 
-			const { tickets} = await callTickets.json()
+			const { tickets } = await callTickets.json()
 			const allTickets = tickets.concat(prevTickets)
 
 			dispatch(receiveTickets(allTickets))

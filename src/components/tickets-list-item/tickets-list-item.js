@@ -2,11 +2,20 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import './ticketListItem.scss'
 import logo from './S7 Logo.svg'
-import { converterMinutesToHours, getDate, getDestination, getTime,convertDate ,getStops, makeStrForStops, divideOnRanges} from '../../secondaryFunc'
-import {actionsForFilters} from '../../constants/index'
+import {
+	converterMinutesToHours,
+	getDate,
+	getDestination,
+	getTime,
+	convertDate,
+	getStops,
+	makeStrForStops,
+	divideOnRanges,
+} from '../../secondaryFunc'
+import { actionsForFilters } from '../../constants/index'
 import Loader from '../loader/loader'
 
-const { DEPARTURE ,ARRIVAL} = actionsForFilters
+const { DEPARTURE, ARRIVAL } = actionsForFilters
 
 export default function TicketListItem() {
 	const tickets = useSelector((store) => store.filters)
@@ -19,41 +28,63 @@ export default function TicketListItem() {
 						<img src={logo} alt={'S7 AirLines'} />
 					</div>
 					<div className="content">
-						<span >
-            <h4 className="minorHeader">{getDestination(item,DEPARTURE)}</h4>
-            <p className='content__el content__el_duration'>{convertDate(getTime(item,DEPARTURE))} - {convertDate(getTime(item,ARRIVAL))} </p>
+						<span>
+							<h4 className="minorHeader">{getDestination(item, DEPARTURE)}</h4>
+							<p className="content__el content__el_duration">
+								{convertDate(getTime(item, DEPARTURE))} -{' '}
+								{convertDate(getTime(item, ARRIVAL))}{' '}
+							</p>
 						</span>
 						<span>
 							<h4 className="minorHeader">В ПУТИ</h4>
-            <p className='content__el content__el_hours'> {converterMinutesToHours(getDate(item,DEPARTURE)) } </p>
+							<p className="content__el content__el_hours">
+								{' '}
+								{converterMinutesToHours(getDate(item, DEPARTURE))}{' '}
+							</p>
 						</span>
 						<span>
-            <h4 className="minorHeader">{makeStrForStops(item.stopsForDeparture)}</h4>
-            <p className='content__el content__el_stops'>{getStops(item,DEPARTURE)}</p>
+							<h4 className="minorHeader">
+								{makeStrForStops(item.stopsForDeparture)}
+							</h4>
+							<p className="content__el content__el_stops">
+								{getStops(item, DEPARTURE)}
+							</p>
 						</span>
 					</div>
 					<div className="content">
 						<span>
-							<h4 className="minorHeader">{getDestination(item,ARRIVAL)}</h4>
-            <p className='content__el content__el_hours'>{convertDate(getTime(item,ARRIVAL))} - {convertDate(getTime(item,DEPARTURE))}</p>
-						</span>
-						<span >
-							<h4 className="minorHeader">В ПУТИ</h4>
-							<p className='content__el content__el_duration'> {convertDate(getTime(item,DEPARTURE))} </p>
+							<h4 className="minorHeader">{getDestination(item, ARRIVAL)}</h4>
+							<p className="content__el content__el_hours">
+								{convertDate(getTime(item, ARRIVAL))} -{' '}
+								{convertDate(getTime(item, DEPARTURE))}
+							</p>
 						</span>
 						<span>
-							<h4 className="minorHeader">{makeStrForStops(item.stopsForArrival)}</h4>
-							<p className='content__el content__el_stops'>{getStops(item,ARRIVAL)}</p>
+							<h4 className="minorHeader">В ПУТИ</h4>
+							<p className="content__el content__el_duration">
+								{' '}
+								{convertDate(getTime(item, DEPARTURE))}{' '}
+							</p>
+						</span>
+						<span>
+							<h4 className="minorHeader">
+								{makeStrForStops(item.stopsForArrival)}
+							</h4>
+							<p className="content__el content__el_stops">
+								{getStops(item, ARRIVAL)}
+							</p>
 						</span>
 					</div>
 				</li>
 			)
 		})
-		return <>
-        <Loader />
-        {elements}
-        </>
-    }
+		return (
+			<>
+				<Loader />
+				{elements}
+			</>
+		)
+	}
 
-    return <> </>
+	return <> </>
 }
