@@ -1,6 +1,6 @@
-import {actionsForFilters} from '../constants/index'
+import { actionsForFilters } from '../constants/index'
 
-const  {
+const {
 	ALL,
 	DEPARTURE,
 	NO_STOPS,
@@ -9,7 +9,6 @@ const  {
 	TWO_STOPS,
 	ARRIVAL,
 } = actionsForFilters
-
 
 export const filterOnPrice = (arr) => {
 	const copyArr = arr.slice()
@@ -103,8 +102,7 @@ export const filterOnLabel = (arr, label) => {
 
 		default:
 			return arr
-    }
-
+	}
 }
 export const getDestination = (obj = null, condition) => {
 	const { segments } = obj
@@ -235,3 +233,66 @@ export const divideOnRanges = (num) => {
 	return number + ' Р'
 }
 export const defineActiveTab = (tab) => tab
+
+export const controlChecks = (arr, id, selectAll) => {
+
+
+	if (id === 1) {
+		const successArr = arr.map((el) => {
+			return {
+				...el,
+				checked: true,
+			}
+        })
+const failedArr = arr.map(el => {
+    return {
+        ...el,
+        checked:false
+    }
+})
+
+        const isTrue =arr.filter(el => el.id !== 1).every(el => el.checked === true)
+        if(isTrue) {
+            return {items: failedArr,selectAll:false}
+        }else {
+            return {items: successArr,selectAll:true}
+        }
+	}
+	if (id > 1 && id < 6) {
+		const changedArr = arr.map((el) => {
+			if (el.id === id) {
+				return { ...el, checked: !el.checked }
+			}
+			return { ...el }
+		})
+		const isTrue = changedArr.filter(el => el.id !==1).every((el) => {
+
+				return el.checked === true
+
+        })
+        if(isTrue) {
+
+            const resArr = changedArr.map((el) => {
+			if (el.id === 1) {
+				return { ...el, checked: true }
+			}
+			return { ...el }
+		})
+		return { items: resArr, selectAll: isTrue }
+        }else {
+
+            const resArr = changedArr.map((el) => {
+                if (el.id === 1) {
+                    return { ...el, checked: false }
+                }
+                return { ...el }
+            })
+
+            return { items: resArr, selectAll: isTrue }
+        }
+
+	}
+}
+export const getCheckForHtml = (id,arr) => {
+    return arr.filter(el => el.id === id).map(el => el.checked)[0];
+  }
