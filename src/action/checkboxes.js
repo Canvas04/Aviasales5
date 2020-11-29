@@ -1,5 +1,6 @@
-import { PRESS_CHECK } from "../constants";
+import { actionForCheckboxes } from '../constants'
 
- const pressCheck = (id,label,payload) => ({type:PRESS_CHECK,id,label,payload})
+const { PRESS_CHECK } = actionForCheckboxes
+const pressCheck = (id) => ({ type: PRESS_CHECK, id })
 
- export {pressCheck};
+export { pressCheck }
