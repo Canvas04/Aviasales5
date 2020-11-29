@@ -1,28 +1,33 @@
 import React from 'react'
-import './checkboxes-group.scss';
+import { useDispatch, useSelector } from 'react-redux'
+import { pressCheck } from '../../action/checkboxes'
+import './checkboxes-group.scss'
+import { getCheckForHtml } from '../../secondaryFunc/index'
+import filters from '../../action/filters'
 
-export default function CheckboxGroups () {
+export default function CheckboxGroups() {
+	const dispatch = useDispatch()
+	const checks = useSelector((store) => store.check.items)
+	const loadedTickets = useSelector((store) => store.loadTickets.tickets)
 
-    return <>
-    <li>
-    <input type='checkbox' id='check1' />
-    <label htmlFor='check1' className='item__label'>Все</label>
-    </li>
-    <li>
-    <input type='checkbox' id='check2' />
-    <label htmlFor='check2' className='item__label'>Без пересадок</label>
-    </li>
-    <li>
-    <input type='checkbox' id='check3' />
-    <label htmlFor='check3' className='item__label'>1 пересадка</label>
-    </li>
-    <li>
-    <input type='checkbox' id='check4' />
-    <label htmlFor='check4' className='item__label'>2 пересадка</label>
-    </li>
-    <li>
-    <input type='checkbox' id='check5' />
-    <label htmlFor='check5' className='item__label'>3 пересадка</label>
-    </li>
-    </>
+	const elements = checks.map((el) => {
+		return (
+			<li key={el.id}>
+				<input
+					type="checkbox"
+					id={el.id}
+					checked={getCheckForHtml(el.id, checks)}
+					onChange={() => {
+						dispatch(pressCheck(el.id))
+						dispatch(filters(el.label, loadedTickets))
+					}}
+				/>
+				<label htmlFor={el.id} className="item__label">
+					{el.label}
+				</label>
+			</li>
+		)
+	})
+
+	return <>{elements}</>
 }
