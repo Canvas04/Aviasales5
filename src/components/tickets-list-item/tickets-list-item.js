@@ -63,7 +63,7 @@ export default function TicketListItem() {
 							<h4 className="minorHeader">В ПУТИ</h4>
 							<p className="content__el content__el_duration">
 								{' '}
-								{convertDate(getTime(item, DEPARTURE))}{' '}
+								{converterMinutesToHours(getDate(item, ARRIVAL))}{' '}
 							</p>
 						</span>
 						<span>
