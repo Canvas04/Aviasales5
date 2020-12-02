@@ -1,12 +1,12 @@
 import React from 'react'
 import { Tabs } from 'antd'
-import Tab1 from '../../containers/tab1/tab1'
-import Tab2 from '../../containers/tab2/tab2'
+import Tab1 from '../tab1/tab1'
+import Tab2 from '../tab2/tab2'
 import './tab-panel.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import filters from '../../action/filters'
-import { actionsForFilters } from '../../constants'
-import { defineActiveTab } from '../../secondaryFunc'
+import filters from '../../../redux/action/filters'
+import { actionsForFilters } from '../../../constants'
+import { defineActiveTab } from '../../../secondaryFunc'
 const { CHEAPEST, FASTEST } = actionsForFilters
 const { TabPane } = Tabs
 

@@ -1,4 +1,4 @@
-import { actionsForLoading, urlConstants } from '../constants'
+import { actionsForLoading, urlConstants } from '../../constants/index'
 const { TICKETS_URL, SEARCH_URL } = urlConstants
 const {
 	FETCH_REQUEST_TICKETS,

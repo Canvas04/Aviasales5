@@ -3,8 +3,8 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import reduxThunk from 'redux-thunk'
-import App from './containers/App'
-import rootReducer from './reducers/index'
+import App from './react/components/App'
+import rootReducer from './redux/reducers/index'
 
 const loggerMiddleWare = (store) => (next) => (action) => {
 	const result = next(action)

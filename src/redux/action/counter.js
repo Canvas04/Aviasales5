@@ -1,4 +1,4 @@
-import { COUNTER } from '../constants'
+import { COUNTER } from '../../constants'
 
 export const counter = () => {
 	return {

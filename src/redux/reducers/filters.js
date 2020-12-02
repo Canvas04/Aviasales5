@@ -1,10 +1,10 @@
-import { actionsForFilters } from '../constants/index'
+import { actionsForFilters } from '../../constants/index'
 import {
 	filterOnLabel,
 	filterOnPrice,
 	filterOnSpeed,
 	filterOnLength,
-} from '../secondaryFunc'
+} from '../../secondaryFunc'
 
 const {
 	ALL,
