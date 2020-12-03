@@ -6,7 +6,6 @@ import './tab-panel.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import filters from '../../../redux/filters/filtersAction'
 import { actionsForFilters } from '../../../constants/constants'
-import { defineActiveTab } from '../../../secondaryFunc'
 const { CHEAPEST, FASTEST } = actionsForFilters
 const { TabPane } = Tabs
 
@@ -15,7 +14,6 @@ export default function TabPanel() {
 	const tickets = useSelector((store) => store.loadTickets.tickets)
 
 	const handlerOnTabClick = (key) => {
-		defineActiveTab(key)
 		if (key === '1') {
 			dispatch(filters(CHEAPEST, tickets))
 		}
