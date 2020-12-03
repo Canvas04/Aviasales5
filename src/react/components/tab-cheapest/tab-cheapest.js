@@ -5,7 +5,7 @@ import TicketList from '../tickets-list/tickets-list'
 import { actionsForFilters } from '../../../constants/constants'
 const { CHEAPEST } = actionsForFilters
 
-export default function Tab1() {
+export default function TabCheapest() {
 	const dispatch = useDispatch()
 	const tickets = useSelector((store) => store.loadTickets.tickets)
 

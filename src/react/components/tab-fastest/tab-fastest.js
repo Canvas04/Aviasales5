@@ -5,7 +5,7 @@ import TicketList from '../tickets-list/tickets-list'
 import { actionsForFilters } from '../../../constants/constants'
 const { FASTEST } = actionsForFilters
 
-export default function Tab2() {
+export default function TabFastest() {
 	const dispatch = useDispatch()
 	const tickets = useSelector((store) => store.loadTickets.tickets)
 	useEffect(() => {

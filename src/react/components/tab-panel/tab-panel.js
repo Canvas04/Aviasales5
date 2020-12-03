@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tabs } from 'antd'
-import Tab1 from '../tab-cheapest/tab-cheapest'
-import Tab2 from '../tab-fastest/tab-fastest'
+import TabCheapest from '../tab-cheapest/tab-cheapest'
+import TabFastest from '../tab-fastest/tab-fastest'
 import './tab-panel.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import filters from '../../../redux/filters/filtersAction'
@@ -31,10 +31,10 @@ export default function TabPanel() {
 				onTabClick={(key) => handlerOnTabClick(key)}
 			>
 				<TabPane tab="САМЫЙ ДЕШЕВЫЙ" key="1">
-					<Tab1 />
+					<TabCheapest />
 				</TabPane>
 				<TabPane tab="CАМЫЙ БЫСТРЫЙ" key="2">
-					<Tab2 />
+					<TabFastest />
 				</TabPane>
 			</Tabs>
 		</>
