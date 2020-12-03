@@ -1,14 +1,6 @@
-import { actionsForFilters } from '../constants/constants'
+import { actionsForFilters } from '../../../constants/constants'
 
-const {
-	ALL,
-	DEPARTURE,
-	NO_STOPS,
-	ONE_STOP,
-	THREE_STOPS,
-	TWO_STOPS,
-	ARRIVAL,
-} = actionsForFilters
+const { DEPARTURE, ARRIVAL } = actionsForFilters
 
 export const getDestination = (obj = null, condition) => {
 	const { segments } = obj
@@ -29,29 +21,6 @@ export const getDestination = (obj = null, condition) => {
 			return obj
 	}
 }
-
-const getCheck = (id, arr) => {
-	return arr.filter((el) => el.id === id).map((el) => el.checked)[0]
-}
-const getCheckLabel = (id, arr) => {
-	return arr
-		.filter((el) => el.id === id)
-		.map((el) => el.label)
-		.join(' ')
-}
-const getCheckId = (id, arr) => {
-	return arr.filter((el) => el.id === id).map((el) => el.id)[0]
-}
-
-export { getCheck, getCheckLabel, getCheckId }
-
-export const converterMinutesToHours = (mins) => {
-	let hours = Math.trunc(mins / 60)
-	let minutes = mins % 60
-	// eslint-disable-next-line no-useless-concat
-	return hours + 'ч   ' + '' + (minutes + 'м')
-}
-
 export const getDate = (obj = null, condition) => {
 	const { segments } = obj
 
@@ -68,6 +37,7 @@ export const getDate = (obj = null, condition) => {
 			return obj
 	}
 }
+
 export const getTime = (obj = null, condition) => {
 	const { segments } = obj
 
@@ -88,7 +58,6 @@ export const convertDate = (dots) => {
 	var timeString = new Date(dots).toTimeString().replace(/:[0-9]{2,2} .*/, '')
 	return dots ? timeString : timeString.replace(/:/, ' ')
 }
-
 export const getStops = (obj = null, condition) => {
 	const { segments } = obj
 
@@ -105,7 +74,6 @@ export const getStops = (obj = null, condition) => {
 			return obj
 	}
 }
-
 export const makeStrForStops = (counter) => {
 	switch (counter) {
 		case 0:
@@ -122,7 +90,6 @@ export const makeStrForStops = (counter) => {
 			return `${counter} ПЕРЕСАДОК`
 	}
 }
-
 export const divideOnRanges = (num) => {
 	const int = String(Math.trunc(num))
 	if (int.length <= 3) return int
@@ -140,7 +107,9 @@ export const divideOnRanges = (num) => {
 	return number + ' Р'
 }
 
-
-export const getCheckForHtml = (id, arr) => {
-	return arr.filter((el) => el.id === id).map((el) => el.checked)[0]
+export const converterMinutesToHours = (mins) => {
+	let hours = Math.trunc(mins / 60)
+	let minutes = mins % 60
+	// eslint-disable-next-line no-useless-concat
+	return hours + 'ч   ' + '' + (minutes + 'м')
 }

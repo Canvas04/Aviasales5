@@ -11,7 +11,7 @@ import {
 	getStops,
 	makeStrForStops,
 	divideOnRanges,
-} from '../../../secondaryFunc'
+} from './extraFunctions'
 import { actionsForFilters } from '../../../constants/constants'
 import Loader from '../loader/loader'
 

@@ -2,8 +2,11 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { pressCheck } from '../../../redux/checkboxes/checkboxesAction'
 import './checkboxes-group.scss'
-import { getCheckForHtml } from '../../../secondaryFunc/index'
 import filters from '../../../redux/filters/filtersAction'
+
+const getCheckForHtml = (id, arr) => {
+	return arr.filter((el) => el.id === id).map((el) => el.checked)[0]
+}
 
 export default function CheckboxGroups() {
 	const dispatch = useDispatch()
