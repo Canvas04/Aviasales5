@@ -12,7 +12,7 @@ import {
 	makeStrForStops,
 	divideOnRanges,
 } from '../../../secondaryFunc'
-import { actionsForFilters } from '../../../constants/index'
+import { actionsForFilters } from '../../../constants/constants'
 import Loader from '../loader/loader'
 
 const { DEPARTURE, ARRIVAL } = actionsForFilters

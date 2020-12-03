@@ -4,8 +4,8 @@ import Tab1 from '../tab1/tab1'
 import Tab2 from '../tab2/tab2'
 import './tab-panel.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import filters from '../../../redux/action/filters'
-import { actionsForFilters } from '../../../constants'
+import filters from '../../../redux/filters/filtersAction'
+import { actionsForFilters } from '../../../constants/constants'
 import { defineActiveTab } from '../../../secondaryFunc'
 const { CHEAPEST, FASTEST } = actionsForFilters
 const { TabPane } = Tabs

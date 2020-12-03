@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { pressCheck } from '../../../redux/action/checkboxes'
+import { pressCheck } from '../../../redux/checkboxes/checkboxesAction'
 import './checkboxes-group.scss'
 import { getCheckForHtml } from '../../../secondaryFunc/index'
-import filters from '../../../redux/action/filters'
+import filters from '../../../redux/filters/filtersAction'
 
 export default function CheckboxGroups() {
 	const dispatch = useDispatch()

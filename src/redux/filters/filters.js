@@ -1,4 +1,4 @@
-import { actionsForFilters } from '../../constants/index'
+import { actionsForFilters } from '../../constants/constants'
 import {
 	filterOnLabel,
 	filterOnPrice,

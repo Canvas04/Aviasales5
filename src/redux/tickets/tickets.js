@@ -1,4 +1,4 @@
-import { actionsForLoading } from '../../constants/index'
+import { actionsForLoading } from '../../constants/constants'
 
 const {
 	FETCH_REQUEST_TICKETS,

@@ -1,4 +1,4 @@
-import { actionForCheckboxes } from '../../constants/index'
+import { actionForCheckboxes } from '../../constants/constants'
 import { controlChecks } from '../../secondaryFunc/index'
 const { PRESS_CHECK } = actionForCheckboxes
 

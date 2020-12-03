@@ -1,4 +1,4 @@
-import { actionsForFilters } from '../../constants'
+import { actionsForFilters } from '../../constants/constants'
 const { FILTER } = actionsForFilters
 
 const reqFilters = (nameFilter, payload, counter) => ({
