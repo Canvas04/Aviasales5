@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
-import { loadTickets } from '../../redux/action/loadTickets'
+import { loadTickets } from '../../redux/action/tickets'
 import Main from './Main/Main'
 
 const App = () => {
