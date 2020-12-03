@@ -8,7 +8,7 @@ const getCheckForHtml = (id, arr) => {
 	return arr.filter((el) => el.id === id).map((el) => el.checked)[0]
 }
 
-export default function CheckboxGroups() {
+export default function FilterOnStops() {
 	const dispatch = useDispatch()
 	const checks = useSelector((store) => store.check.items)
 	const loadedTickets = useSelector((store) => store.loadTickets.tickets)

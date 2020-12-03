@@ -1,6 +1,6 @@
 import React from 'react'
 import TabPanel from '../tab-panel/tab-panel'
-import CheckboxGroups from '../checkboxes-group/checkboxes-group'
+import FilterOnStops from '../filter-on-stops/filteron-stops'
 import './filter.scss'
 
 export default function Filter() {
@@ -11,7 +11,7 @@ export default function Filter() {
 					<li className="filter__item">
 						<h1 className="filter__header">КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
 					</li>
-					<CheckboxGroups />
+					<FilterOnStops />
 				</ul>
 
 				<div className="filter__tab-panel">
