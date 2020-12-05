@@ -35,7 +35,7 @@ export const filterOnSpeed = (arr) => {
 	})
 }
 
-export const filterOnLength = (arr, counter) => {
+export const filterOnLength = (arr, counter = 1) => {
 	let limit = 7
 
 	if (arr.length > limit) {

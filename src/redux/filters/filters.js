@@ -19,7 +19,7 @@ const {
 const filters = (state = null, action) => {
 	switch (action.type) {
 		case FILTER:
-			return filterOnLength(getTickets(action), action.counter)
+			return filterOnLength(getTickets(action))
 
 		default:
 			return state
@@ -34,18 +34,41 @@ const getTickets = (filter) => {
 		case CHEAPEST:
 			return filterOnPrice(filter.payload)
 		case ALL:
-			return filterOnLabel(filter.payload, filter.nameFilter)
+			if (filter.key === 1) {
+				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
+			} else {
+				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
+			}
 		case NO_STOPS:
-			return filterOnLabel(filter.payload, filter.nameFilter)
-
+			if (filter.key === 1) {
+				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
+			} else {
+				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
+			}
 		case ONE_STOP:
-			return filterOnLabel(filter.payload, filter.nameFilter)
+			if (filter.key === 1) {
+				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
+			} else {
+				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
+			}
 		case TWO_STOPS:
-			return filterOnLabel(filter.payload, filter.nameFilter)
+			if (filter.key === 1) {
+				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
+			} else {
+				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
+			}
 		case THREE_STOPS:
-			return filterOnLabel(filter.payload, filter.nameFilter)
+			if (filter.key === 1) {
+				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
+			} else {
+				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
+			}
 
 		default:
-			return filterOnPrice(filter.payload)
+			if (filter.key === 1) {
+				return filterOnPrice(filter.payload)
+			} else {
+				return filterOnSpeed(filter.payload)
+			}
 	}
 }

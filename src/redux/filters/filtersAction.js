@@ -1,15 +1,15 @@
 import { actionsForFilters } from '../../constants/constants'
 const { FILTER } = actionsForFilters
 
-const reqFilters = (nameFilter, payload, counter) => ({
+const reqFilters = (nameFilter, payload, key) => ({
 	type: FILTER,
 	nameFilter,
 	payload,
-	counter,
+	key,
 })
 const filters = (nameFilter, payload) => {
 	return (dispatch, store) => {
-		dispatch(reqFilters(nameFilter, payload, store().counter))
+		dispatch(reqFilters(nameFilter, payload, store().defineTab.key))
 	}
 }
 export default filters

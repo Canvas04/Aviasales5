@@ -12,6 +12,7 @@ export default function FilterOnStops() {
 	const dispatch = useDispatch()
 	const checks = useSelector((store) => store.check.items)
 	const loadedTickets = useSelector((store) => store.loadTickets.tickets)
+	const activeTabKey = useSelector((store) => store.defineTab.key)
 
 	const elements = checks.map((el) => {
 		return (
@@ -22,7 +23,7 @@ export default function FilterOnStops() {
 					checked={getCheckForHtml(el.id, checks)}
 					onChange={() => {
 						dispatch(pressCheck(el.id))
-						dispatch(filters(el.label, loadedTickets))
+						dispatch(filters(el.label, loadedTickets, activeTabKey))
 					}}
 				/>
 				<label htmlFor={el.id} className="item__label">
