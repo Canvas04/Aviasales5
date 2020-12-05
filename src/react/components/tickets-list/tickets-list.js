@@ -79,7 +79,7 @@ export default function TicketListItem() {
 			)
 		})
 		return (
-			<ul className='tickets'>
+			<ul className="tickets">
 				<Loader />
 				{elements}
 			</ul>
