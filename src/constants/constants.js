@@ -28,3 +28,7 @@ export const COUNTER = 'COUNTER'
 export const actionForCheckboxes = {
 	PRESS_CHECK: 'PRESS_CHECK',
 }
+
+export const activeTab = {
+	TAB: 'TAB',
+}
