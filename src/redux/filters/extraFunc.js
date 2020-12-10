@@ -2,12 +2,14 @@ import { actionsForFilters } from '../../constants/constants'
 
 const { ALL, NO_STOPS, THREE_STOPS, TWO_STOPS, ONE_STOP } = actionsForFilters
 
-export const filterOnPrice = (arr) => {
+export const filterOnPrice = (arr, currentFilter) => {
+	console.log('currentFilter', currentFilter)
+
 	const copyArr = arr.slice()
 	copyArr.sort((a, b) => {
 		return a.price - b.price
 	})
-	return copyArr.map((el) => {
+	const sortArr = copyArr.map((el) => {
 		const { segments } = el
 		return {
 			...el,
@@ -15,8 +17,9 @@ export const filterOnPrice = (arr) => {
 			stopsForArrival: segments[1].stops.length,
 		}
 	})
+	return filterOnLabel(sortArr, currentFilter)
 }
-export const filterOnSpeed = (arr) => {
+export const filterOnSpeed = (arr, currentFilter) => {
 	const copyArr = arr.slice()
 
 	copyArr.sort((a, b) => {
@@ -25,7 +28,7 @@ export const filterOnSpeed = (arr) => {
 			b.segments.reduce((acc, current) => acc.duration + current.duration)
 		)
 	})
-	return copyArr.map((el) => {
+	const sortArr = copyArr.map((el) => {
 		const { segments } = el
 		return {
 			...el,
@@ -33,6 +36,7 @@ export const filterOnSpeed = (arr) => {
 			stopsForArrival: segments[1].stops.length,
 		}
 	})
+	return filterOnLabel(sortArr, currentFilter)
 }
 
 export const filterOnLength = (arr, counter = 1) => {
@@ -78,7 +82,7 @@ export const filterOnStops = (arr, num) => {
 	}
 }
 
-export const filterOnLabel = (arr, label) => {
+export function filterOnLabel(arr, label) {
 	switch (label) {
 		case ALL:
 			return filterOnStops(arr)
