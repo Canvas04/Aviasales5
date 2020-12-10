@@ -8,9 +8,10 @@ const { CHEAPEST } = actionsForFilters
 export default function TabCheapest() {
 	const dispatch = useDispatch()
 	const tickets = useSelector((store) => store.loadTickets.tickets)
+	const filter = useSelector((store) => store.currentFilter)
 
 	useEffect(() => {
-		dispatch(filters(CHEAPEST, tickets))
+		dispatch(filters(CHEAPEST, tickets,filter))
 	})
 	return (
 		<>
