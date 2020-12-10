@@ -1,20 +1,6 @@
 import { actionsForFilters } from '../../constants/constants'
-import {
-	filterOnLabel,
-	filterOnLength,
-	filterOnPrice,
-	filterOnSpeed,
-} from './extraFunc'
-const {
-	ALL,
-	CHEAPEST,
-	FASTEST,
-	FILTER,
-	NO_STOPS,
-	THREE_STOPS,
-	TWO_STOPS,
-	ONE_STOP,
-} = actionsForFilters
+import { filterOnLength, filterOnPrice, filterOnSpeed } from './extraFunc'
+const { CHEAPEST, FASTEST, FILTER } = actionsForFilters
 
 const filters = (state = null, action) => {
 	switch (action.type) {
