@@ -8,8 +8,10 @@ const { FASTEST } = actionsForFilters
 export default function TabFastest() {
 	const dispatch = useDispatch()
 	const tickets = useSelector((store) => store.loadTickets.tickets)
+	const filter = useSelector((store) => store.currentFilter)
+
 	useEffect(() => {
-		dispatch(filters(FASTEST, tickets))
+		dispatch(filters(FASTEST, tickets,filter))
 	})
 	return (
 		<>
