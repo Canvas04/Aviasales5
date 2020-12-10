@@ -1,1 +1,1 @@
-export const defineFilter = (filter) => ({type: 'CURRENT',filter})
+export const defineFilter = (filter) => ({ type: 'CURRENT', filter })

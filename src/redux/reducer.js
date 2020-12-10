@@ -5,4 +5,10 @@ import check from './checkboxes/checkboxes'
 import defineTab from './defineActiveTab/defineActiveTab'
 import currentFilter from './current-filter/current-filter'
 
-export default combineReducers({ loadTickets, filters, check, defineTab ,currentFilter})
+export default combineReducers({
+	loadTickets,
+	filters,
+	check,
+	defineTab,
+	currentFilter,
+})

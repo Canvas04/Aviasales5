@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { pressCheck } from '../../../redux/checkboxes/checkboxesAction'
 import './checkboxes-group.scss'
-import filters from '../../../redux/filters/filtersAction'
 import { defineFilter } from '../../../redux/current-filter/action'
 
 const getCheckForHtml = (id, arr) => {
@@ -12,9 +11,6 @@ const getCheckForHtml = (id, arr) => {
 export default function FilterOnStops() {
 	const dispatch = useDispatch()
 	const checks = useSelector((store) => store.check.items)
-	const loadedTickets = useSelector((store) => store.loadTickets.tickets)
-	const activeTabKey = useSelector((store) => store.defineTab.key)
-
 	const elements = checks.map((el) => {
 		return (
 			<li key={el.id}>

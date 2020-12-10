@@ -3,8 +3,6 @@ import { actionsForFilters } from '../../constants/constants'
 const { ALL, NO_STOPS, THREE_STOPS, TWO_STOPS, ONE_STOP } = actionsForFilters
 
 export const filterOnPrice = (arr, currentFilter) => {
-	console.log('currentFilter', currentFilter)
-
 	const copyArr = arr.slice()
 	copyArr.sort((a, b) => {
 		return a.price - b.price

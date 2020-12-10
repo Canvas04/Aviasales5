@@ -30,9 +30,9 @@ export default filters
 const getTickets = (filter) => {
 	switch (filter.nameFilter) {
 		case FASTEST:
-			return filterOnSpeed(filter.payload,filter.currentFilter)
+			return filterOnSpeed(filter.payload, filter.currentFilter)
 		case CHEAPEST:
-			return filterOnPrice(filter.payload,filter.currentFilter)
+			return filterOnPrice(filter.payload, filter.currentFilter)
 		case ALL:
 			if (filter.key === 1) {
 				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
