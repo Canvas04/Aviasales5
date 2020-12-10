@@ -13,14 +13,16 @@ const { TabPane } = Tabs
 export default function TabPanel() {
 	const dispatch = useDispatch()
 	const tickets = useSelector((store) => store.loadTickets.tickets)
+	const filter = useSelector((store) => store.currentFilter)
+
 
 	const handlerOnTabClick = (key) => {
 		dispatch(getTab(key))
 		if (key === '1') {
-			dispatch(filters(CHEAPEST, tickets))
+			dispatch(filters(CHEAPEST, tickets,filter))
 		}
 		if (key === '2') {
-			dispatch(filters(FASTEST, tickets))
+			dispatch(filters(FASTEST, tickets,filter))
 		}
 	}
 
