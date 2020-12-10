@@ -33,36 +33,6 @@ const getTickets = (filter) => {
 			return filterOnSpeed(filter.payload, filter.currentFilter)
 		case CHEAPEST:
 			return filterOnPrice(filter.payload, filter.currentFilter)
-		case ALL:
-			if (filter.key === 1) {
-				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
-			} else {
-				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
-			}
-		case NO_STOPS:
-			if (filter.key === 1) {
-				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
-			} else {
-				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
-			}
-		case ONE_STOP:
-			if (filter.key === 1) {
-				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
-			} else {
-				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
-			}
-		case TWO_STOPS:
-			if (filter.key === 1) {
-				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
-			} else {
-				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
-			}
-		case THREE_STOPS:
-			if (filter.key === 1) {
-				return filterOnPrice(filterOnLabel(filter.payload, filter.nameFilter))
-			} else {
-				return filterOnSpeed(filterOnLabel(filter.payload, filter.nameFilter))
-			}
 
 		default:
 			if (filter.key === 1) {
