@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { pressCheck } from '../../../redux/checkboxes/checkboxesAction'
 import './checkboxes-group.scss'
-import { defineFilter } from '../../../redux/current-filter/action'
+
 
 const getCheckForHtml = (id, arr) => {
 	return arr.filter((el) => el.id === id).map((el) => el.checked)[0]
