@@ -25,7 +25,6 @@ export const filterOnPrice = (arr, currentFilter, filters) => {
 	if (filters.length !== 0) {
 		if (filters.includes(ALL)) {
 			Allstops = filterOnStops(sortArr)
-			
 		} else {
 			Allstops = []
 		}
@@ -61,7 +60,6 @@ export const filterOnPrice = (arr, currentFilter, filters) => {
 	} else {
 		return sortArr
 	}
-
 }
 export const filterOnSpeed = (arr, currentFilter, filters) => {
 	const copyArr = arr.slice()
@@ -90,10 +88,6 @@ export const filterOnSpeed = (arr, currentFilter, filters) => {
 	if (filters.length !== 0) {
 		if (filters.includes(ALL)) {
 			Allstops = filterOnStops(sortArr)
-			console.log(
-				'🚀 ~ file: extraFunc.js ~ line 27 ~ filterOnPrice ~ Allstops',
-				Allstops
-			)
 		} else {
 			Allstops = []
 		}
@@ -192,12 +186,3 @@ export function filterOnLabel(arr, label) {
 			return arr
 	}
 }
-
-const getNums = (arr) => {
-	return arr.map((el) => {
-		if (el === 'Все') {
-			return
-		}
-	})
-}
-// Нужно написать функцию , которая принимает массив а отдает массив с количеством пересадок в цифрах

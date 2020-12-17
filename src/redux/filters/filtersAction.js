@@ -1,12 +1,12 @@
 import { actionsForFilters } from '../../constants/constants'
 const { FILTER } = actionsForFilters
 
-const filters = (nameFilter, payload, currentFilter,filters) => ({
+const filters = (nameFilter, payload, currentFilter, filters) => ({
 	type: FILTER,
 	nameFilter,
 	payload,
 	currentFilter,
-	filters
+	filters,
 })
 
 export default filters
