@@ -14,14 +14,15 @@ export default function TabPanel() {
 	const dispatch = useDispatch()
 	const tickets = useSelector((store) => store.loadTickets.tickets)
 	const filter = useSelector((store) => store.currentFilter)
-
+	const arrWithFilters = useSelector((store) => store.check.items).filter(el => el.checked === true).map(el => el.label)
+	
 	const handlerOnTabClick = (key) => {
 		dispatch(getTab(key))
 		if (key === '1') {
-			dispatch(filters(CHEAPEST, tickets, filter))
+			dispatch(filters(CHEAPEST, tickets, filter,arrWithFilters))
 		}
 		if (key === '2') {
-			dispatch(filters(FASTEST, tickets, filter))
+			dispatch(filters(FASTEST, tickets, filter,arrWithFilters))
 		}
 	}
 

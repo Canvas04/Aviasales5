@@ -20,10 +20,7 @@ export default function FilterOnStops() {
 					checked={getCheckForHtml(el.id, checks)}
 					onChange={() => {
 						dispatch(pressCheck(el.id))
-						dispatch(defineFilter('Все'))
-						if (!el.checked) {
-							dispatch(defineFilter(el.label))
-						}
+						
 					}}
 				/>
 				<label htmlFor={el.id} className="item__label">

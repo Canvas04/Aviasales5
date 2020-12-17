@@ -1,7 +1,9 @@
-const currentFilter = (state = 'Все', action) => {
+const currentFilter = (state = ['Все'], action) => {
 	switch (action.type) {
 		case 'CURRENT':
-			return action.filter
+			
+			
+			return [...action.filter]
 		default:
 			return state
 	}

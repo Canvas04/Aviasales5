@@ -9,9 +9,10 @@ export default function TabFastest() {
 	const dispatch = useDispatch()
 	const tickets = useSelector((store) => store.loadTickets.tickets)
 	const filter = useSelector((store) => store.currentFilter)
+	const arrWithFilters = useSelector((store) => store.check.items).filter(el => el.checked === true).map(el => el.label)
 
 	useEffect(() => {
-		dispatch(filters(FASTEST, tickets, filter))
+		dispatch(filters(FASTEST, tickets, filter,arrWithFilters))
 	})
 	return (
 		<>
