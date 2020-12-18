@@ -13,9 +13,6 @@ export default function TabFastest() {
 		.filter((el) => el.checked === true)
 		.map((el) => el.label)
 
-	useEffect(() => {
-		dispatch(filters(FASTEST, tickets, filter, arrWithFilters))
-	})
 	return (
 		<>
 			<TicketList />
