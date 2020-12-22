@@ -24,54 +24,50 @@ export default function TicketListItem() {
 			return (
 				<li className="tickets__item" key={item.price}>
 					<div className="pricesAndLogo">
-						<h3>{divideOnRanges(item.price)}</h3>
+						<h3></h3>
 						<img src={logo} alt={'S7 AirLines'} />
 					</div>
 					<div className="content">
 						<span>
-							<h4 className="minorHeader">{getDestination(item, DEPARTURE)}</h4>
+							<h4 className="minorHeader"></h4>
 							<p className="content__el content__el_duration">
-								{convertDate(getTime(item, DEPARTURE))} -{' '}
-								{convertDate(getTime(item, ARRIVAL))}{' '}
+							
 							</p>
 						</span>
 						<span>
 							<h4 className="minorHeader">В ПУТИ</h4>
 							<p className="content__el content__el_hours">
-								{' '}
-								{converterMinutesToHours(getDate(item, DEPARTURE))}{' '}
+							
 							</p>
 						</span>
 						<span>
 							<h4 className="minorHeader">
-								{makeStrForStops(item.stopsForDeparture)}
+							
 							</h4>
 							<p className="content__el content__el_stops">
-								{getStops(item, DEPARTURE)}
+							
 							</p>
 						</span>
 					</div>
 					<div className="content">
 						<span>
-							<h4 className="minorHeader">{getDestination(item, ARRIVAL)}</h4>
+							<h4 className="minorHeader"></h4>
 							<p className="content__el content__el_hours">
-								{convertDate(getTime(item, ARRIVAL))} -{' '}
-								{convertDate(getTime(item, DEPARTURE))}
+								
 							</p>
 						</span>
 						<span>
 							<h4 className="minorHeader">В ПУТИ</h4>
 							<p className="content__el content__el_duration">
-								{' '}
-								{converterMinutesToHours(getDate(item, ARRIVAL))}{' '}
+								
 							</p>
 						</span>
 						<span>
 							<h4 className="minorHeader">
-								{makeStrForStops(item.stopsForArrival)}
+								
 							</h4>
 							<p className="content__el content__el_stops">
-								{getStops(item, ARRIVAL)}
+							
 							</p>
 						</span>
 					</div>

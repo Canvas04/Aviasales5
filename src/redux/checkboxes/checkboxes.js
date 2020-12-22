@@ -7,27 +7,27 @@ const initialState = {
 		{
 			id: 1,
 			label: 'Все',
-			checked: false,
+			checked: true,
 		},
 		{
 			id: 2,
 			label: 'Без пересадок',
-			checked: false,
+			checked: true,
 		},
 		{
 			id: 3,
 			label: '1 пересадка',
-			checked: false,
+			checked: true,
 		},
 		{
 			id: 4,
 			label: '2 пересадки',
-			checked: false,
+			checked: true,
 		},
 		{
 			id: 5,
 			label: '3 пересадки',
-			checked: false,
+			checked: true,
 		},
 	],
 	selectAll: false,
