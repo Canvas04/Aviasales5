@@ -8,5 +8,5 @@ export default combineReducers({
 	loadTickets,
 	filters,
 	check,
-	counter
+	counter,
 })

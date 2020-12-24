@@ -15,7 +15,6 @@ import {
 import { actionsForFilters } from '../../../constants/constants'
 import Loader from '../loader/loader'
 import styled from 'styled-components'
-import { Button } from 'antd'
 import { counter } from '../../../redux/counter/counter-action'
 
 const { DEPARTURE, ARRIVAL } = actionsForFilters
@@ -27,12 +26,15 @@ export default function TicketListItem() {
 		.map((el) => el.checked)
 		.every((el) => el === false)
 	const noStops = useSelector((store) => store.check.items)
-		.filter((el) => el.id == 2)
-		.map((el) => el.checked).every(el => el === true)
+		.filter((el) => el.id === 2)
+		.map((el) => el.checked)
+		.every((el) => el === true)
 
-		const otherStops = useSelector(store => store.check.items).filter(el => el.id !== 2).map(el => el.checked).every(el => el === false)
-console.log(noStops,otherStops)
-
+	const otherStops = useSelector((store) => store.check.items)
+		.filter((el) => el.id !== 2)
+		.map((el) => el.checked)
+		.every((el) => el === false)
+	console.log(noStops, otherStops)
 
 	if (tickets) {
 		const elements = tickets.map((item) => {
@@ -89,7 +91,7 @@ console.log(noStops,otherStops)
 							</p>
 						</span>
 						<span>
-							{noStops && otherStops ?   (
+							{noStops && otherStops ? (
 								<h4 className="minorHeader position">БЕЗ ПЕРЕСАДОК</h4>
 							) : (
 								<>
