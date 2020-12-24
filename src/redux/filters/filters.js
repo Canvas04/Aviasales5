@@ -77,11 +77,11 @@ const filterOnPrice = (arr, filters) => {
 		})
 		return resArr
 	} else {
-		return null
+		return []
 	}
 }
 
-const filterOnSpeed = (arr,filters) => {
+const filterOnSpeed = (arr, filters) => {
 	const copyArr = arr.slice()
 
 	copyArr.sort((a, b) => {
@@ -124,18 +124,36 @@ const filterOnSpeed = (arr,filters) => {
 		})
 		return resArr
 	} else {
-		return null
+		return []
+	}
+}
+
+const filterOnLength = (arr = [], counter = 1) => {
+	let limit = 7
+
+	if (arr.length > limit) {
+		for (let i = 1; i < counter; i++) {
+			limit += limit
+		}
+		return arr.slice(0, limit)
+	} else {
+		return arr
 	}
 }
 
 export default (state = null, action) => {
 	switch (action.nameFilter) {
 		case FASTEST:
-			return filterOnSpeed(action.payload, action.filters)
+			return filterOnLength(
+				filterOnSpeed(action.payload, action.filters),
+				action.counter
+			)
 		case CHEAPEST:
-			return filterOnPrice(action.payload, action.filters)
+			return filterOnLength(
+				filterOnPrice(action.payload, action.filters),
+				action.counter
+			)
 		default:
 			return state
 	}
 }
-

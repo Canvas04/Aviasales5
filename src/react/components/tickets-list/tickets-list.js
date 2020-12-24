@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './ticketList.scss'
 import logo from './S7 Logo.svg'
 import {
@@ -15,10 +15,13 @@ import {
 import { actionsForFilters } from '../../../constants/constants'
 import Loader from '../loader/loader'
 import styled from 'styled-components'
+import { Button } from 'antd'
+import { counter } from '../../../redux/counter/counter-action'
 
 const { DEPARTURE, ARRIVAL } = actionsForFilters
 
 export default function TicketListItem() {
+	const dispatch = useDispatch()
 	const tickets = useSelector((store) => store.filters)
 	const isCheckedFilters = useSelector((store) => store.check.items)
 		.map((el) => el.checked)
@@ -86,22 +89,26 @@ export default function TicketListItem() {
 		return (
 			<>
 				{!isCheckedFilters && (
+					<>
 					<ul className="tickets">
 						<Loader />
 						{elements}
 					</ul>
+					<button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => dispatch(counter())} > Показать еще</button>
+
+
+					</>
 				)}
+				{isCheckedFilters && (
+				<Label>Рейсов, подходящих под заданные фильтры , не найдено</Label>
+			)}
 			</>
 		)
 	}
 
 	return (
 		<>
-			{isCheckedFilters && (
-				<Label>Рейсов, подходящих под заданные фильтры , не найдено</Label>
-			)}
-
-
+		
 		</>
 	)
 }

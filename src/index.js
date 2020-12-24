@@ -6,6 +6,7 @@ import reduxThunk from 'redux-thunk'
 import App from './react/components/App'
 import rootReducer from './redux/reducer'
 
+
 const loggerMiddleWare = (store) => (next) => (action) => {
 	const result = next(action)
 	return result
