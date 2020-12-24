@@ -87,7 +87,7 @@ export const makeStrForStops = (counter) => {
 		case 4:
 			return '2 ПЕРЕСАДКИ'
 		default:
-			return `${counter} ПЕРЕСАДОК`
+		// return `${counter} ПЕРЕСАДОК`
 	}
 }
 export const divideOnRanges = (num) => {
