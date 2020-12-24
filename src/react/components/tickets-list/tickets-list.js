@@ -26,6 +26,13 @@ export default function TicketListItem() {
 	const isCheckedFilters = useSelector((store) => store.check.items)
 		.map((el) => el.checked)
 		.every((el) => el === false)
+	const noStops = useSelector((store) => store.check.items)
+		.filter((el) => el.id == 2)
+		.map((el) => el.checked).every(el => el === true)
+
+		const otherStops = useSelector(store => store.check.items).filter(el => el.id !== 2).map(el => el.checked).every(el => el === false)
+console.log(noStops,otherStops)
+
 
 	if (tickets) {
 		const elements = tickets.map((item) => {
@@ -51,12 +58,19 @@ export default function TicketListItem() {
 							</p>
 						</span>
 						<span>
-							<h4 className="minorHeader">
-								{makeStrForStops(item.stopsForDeparture)}
-							</h4>
-							<p className="content__el content__el_stops">
-								{getStops(item, DEPARTURE)}
-							</p>
+							{noStops && otherStops ? (
+								<h4 className="minorHeader position">БЕЗ ПЕРЕСАДОК</h4>
+							) : (
+								<>
+									{' '}
+									<h4 className="minorHeader">
+										{makeStrForStops(item.stopsForDeparture)}
+									</h4>
+									<p className="content__el content__el_stops">
+										{getStops(item, DEPARTURE)}
+									</p>
+								</>
+							)}
 						</span>
 					</div>
 					<div className="content">
@@ -75,12 +89,19 @@ export default function TicketListItem() {
 							</p>
 						</span>
 						<span>
-							<h4 className="minorHeader">
-								{makeStrForStops(item.stopsForArrival)}
-							</h4>
-							<p className="content__el content__el_stops">
-								{getStops(item, ARRIVAL)}
-							</p>
+							{noStops && otherStops ?   (
+								<h4 className="minorHeader position">БЕЗ ПЕРЕСАДОК</h4>
+							) : (
+								<>
+									{' '}
+									<h4 className="minorHeader">
+										{makeStrForStops(item.stopsForDeparture)}
+									</h4>
+									<p className="content__el content__el_stops">
+										{getStops(item, DEPARTURE)}
+									</p>
+								</>
+							)}
 						</span>
 					</div>
 				</li>
@@ -90,27 +111,28 @@ export default function TicketListItem() {
 			<>
 				{!isCheckedFilters && (
 					<>
-					<ul className="tickets">
-						<Loader />
-						{elements}
-					</ul>
-					<button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => dispatch(counter())} > Показать еще</button>
-
-
+						<ul className="tickets">
+							<Loader />
+							{elements}
+						</ul>
+						<button
+							type="button"
+							className="btn btn-primary btn-lg btn-block"
+							onClick={() => dispatch(counter())}
+						>
+							{' '}
+							Показать еще
+						</button>
 					</>
 				)}
 				{isCheckedFilters && (
-				<Label>Рейсов, подходящих под заданные фильтры , не найдено</Label>
-			)}
+					<Label>Рейсов, подходящих под заданные фильтры , не найдено</Label>
+				)}
 			</>
 		)
 	}
 
-	return (
-		<>
-		
-		</>
-	)
+	return <></>
 }
 
 const Label = styled.div`
