@@ -97,10 +97,10 @@ export default function TicketListItem() {
 								<>
 									{' '}
 									<h4 className="minorHeader">
-										{makeStrForStops(item.stopsForDeparture)}
+										{makeStrForStops(item.stopsForArrival)}
 									</h4>
 									<p className="content__el content__el_stops">
-										{getStops(item, DEPARTURE)}
+										{getStops(item, ARRIVAL)}
 									</p>
 								</>
 							)}
