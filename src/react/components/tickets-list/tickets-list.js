@@ -34,7 +34,6 @@ export default function TicketListItem() {
 		.filter((el) => el.id !== 2)
 		.map((el) => el.checked)
 		.every((el) => el === false)
-	console.log(noStops, otherStops)
 
 	if (tickets) {
 		const elements = tickets.map((item) => {
