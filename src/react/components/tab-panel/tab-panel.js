@@ -10,6 +10,11 @@ const { CHEAPEST, FASTEST } = actionsForFilters
 const { TabPane } = Tabs
 
 export default function TabPanel() {
+  const tabs = {
+    CHEAP: '1',
+    EXPENSIVE: '2',
+  }
+
   const dispatch = useDispatch()
   const tickets = useSelector((store) => store.loadTickets.tickets)
   const filter = useSelector((store) => store.currentFilter)
@@ -19,10 +24,10 @@ export default function TabPanel() {
     .map((el) => el.label)
 
   const handlerOnTabClick = (key) => {
-    if (key === '1') {
+    if (key === tabs.CHEAP) {
       dispatch(filters(CHEAPEST, tickets, filter, arrWithFilters, counter))
     }
-    if (key === '2') {
+    if (key === tabs.EXPENSIVE) {
       dispatch(filters(FASTEST, tickets, filter, arrWithFilters, counter))
     }
   }
