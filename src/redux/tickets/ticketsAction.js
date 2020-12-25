@@ -5,6 +5,11 @@ const {
   FETCH_RECEIVE_TICKETS,
   FETCH_FAILURE_TICKETS,
 } = actionsForLoading
+
+const status = {
+  SUCCESS: 'success',
+  ERROR: 'error',
+}
 const requestTickets = () => {
   return {
     type: FETCH_REQUEST_TICKETS,
@@ -13,14 +18,14 @@ const requestTickets = () => {
 const receiveTickets = (payload) => {
   return {
     type: FETCH_RECEIVE_TICKETS,
-    status: 'success',
+    status: status.SUCCESS,
     payload,
   }
 }
 const errorLoadTickets = (error) => {
   return {
     type: FETCH_FAILURE_TICKETS,
-    status: 'error',
+    status: status.ERROR,
     error,
   }
 }
