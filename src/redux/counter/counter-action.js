@@ -1,5 +1,5 @@
 export const counter = () => {
-	return {
-		type: 'COUNTER',
-	}
+  return {
+    type: 'COUNTER',
+  }
 }
