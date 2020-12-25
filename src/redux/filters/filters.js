@@ -54,23 +54,7 @@ const filterOnPrice = (arr, filters) => {
   })
   if (filters.length !== 0) {
     let resArr = []
-    const numFilters = filters.map((el) => {
-      if (el === ALL) {
-        return null
-      }
-      if (el === NO_STOPS) {
-        return 0
-      }
-      if (el === ONE_STOP) {
-        return 1
-      }
-      if (el === TWO_STOPS) {
-        return 2
-      }
-      if (el === THREE_STOPS) {
-        return 3
-      }
-    })
+    const numFilters =  getNumbersFromString(filters) 
 
     numFilters.forEach((el) => {
       resArr.unshift(...filterOnStops(sortArr, el))
@@ -101,23 +85,8 @@ const filterOnSpeed = (arr, filters) => {
   })
   if (filters.length !== 0) {
     let resArr = []
-    const numFilters = filters.map((el) => {
-      if (el === ALL) {
-        return null
-      }
-      if (el === NO_STOPS) {
-        return 0
-      }
-      if (el === ONE_STOP) {
-        return 1
-      }
-      if (el === TWO_STOPS) {
-        return 2
-      }
-      if (el === THREE_STOPS) {
-        return 3
-      }
-    })
+
+    const numFilters = getNumbersFromString(filters) 
 
     numFilters.forEach((el) => {
       resArr.unshift(...filterOnStops(sortArr, el))
@@ -156,4 +125,24 @@ export default (state = null, action) => {
     default:
       return state
   }
+}
+
+function getNumbersFromString(arr) {
+  return arr.map((el) => {
+    if (el === ALL) {
+      return null
+    }
+    if (el === NO_STOPS) {
+      return 0
+    }
+    if (el === ONE_STOP) {
+      return 1
+    }
+    if (el === TWO_STOPS) {
+      return 2
+    }
+    if (el === THREE_STOPS) {
+      return 3
+    }
+  })
 }
