@@ -25,9 +25,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix --color",
-    "format": "prettier — write src/**/*.js",
+    "format": "prettier --write src/**/*.js",
     "precommit": "lint-staged",
-    "prettier": "prettier --single-quote --use-tabs --trailing-comma es5 --write \"src/**/*.js\""
+    "prettier": "prettier --single-quote  --trailing-comma es5 --write \"src/**/*.js\""
   },
   "eslintConfig": {
     "extends": "react-app"

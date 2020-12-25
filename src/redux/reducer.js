@@ -5,8 +5,8 @@ import check from './checkboxes/checkboxes'
 import counter from './counter/counter'
 
 export default combineReducers({
-	loadTickets,
-	filters,
-	check,
-	counter,
+  loadTickets,
+  filters,
+  check,
+  counter,
 })

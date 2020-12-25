@@ -5,17 +5,17 @@ import { loadTickets } from '../../redux/tickets/ticketsAction'
 import Main from './Main/Main'
 
 const App = () => {
-	const dispatch = useDispatch()
-	useEffect(() => {
-		dispatch(loadTickets())
-	}, [dispatch])
-	return (
-		<>
-			<ErrorBoundary>
-				<Main />
-			</ErrorBoundary>
-		</>
-	)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(loadTickets())
+  }, [dispatch])
+  return (
+    <>
+      <ErrorBoundary>
+        <Main />
+      </ErrorBoundary>
+    </>
+  )
 }
 
 export default App
